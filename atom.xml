@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-26T08:51:46.092Z</updated>
+  <updated>2019-08-27T03:31:22.948Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo Next统计文章访问量</title>
+    <link href="http://yoursite.com/2019/08/27/Hexo-Next%E7%BB%9F%E8%AE%A1%E6%96%87%E7%AB%A0%E8%AE%BF%E9%97%AE%E9%87%8F/"/>
+    <id>http://yoursite.com/2019/08/27/Hexo-Next统计文章访问量/</id>
+    <published>2019-08-27T03:00:48.000Z</published>
+    <updated>2019-08-27T03:31:22.948Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo-Next统计文章访问量"><a href="#Hexo-Next统计文章访问量" class="headerlink" title="Hexo Next统计文章访问量"></a>Hexo Next统计文章访问量</h1><p>前往<a href="https://leancloud.cn/dashboard/login.html#/signup" target="_blank" rel="noopener">LeanCloud</a>进行注册登陆</p><p>点击创建应用</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/1.png" alt="1"></p><p>输入应用名称(名称随意), 选择开发版, 点击创建</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/2.png" alt="2"></p><p>创建成功后点击应用右上角的设置</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/3.png" alt="3"></p><p>点击存储，创建Class，Class名称设置为<code>Counter</code>(必须为<code>Counter</code>)，选择无限制，点击创建</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/4.png" alt="4"></p><p>创建后点击设置，点击应用Key，获取App ID和App Key</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/5.png" alt="5"></p><p>将主题配置文件/themes/next/_config.yml中的<code>leancloud_visitors:</code>的<code>enable</code>设为<code>true</code>，并将App ID和App Key填入</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/6.png" alt="6"></p><p>点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致）</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/7.png" alt="7"></p><p>完成后执行<code>hexo clean</code>和<code>hexo s</code>启动Hexo,便可以看到访问量标志了</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/8.png" alt="8"></p><p>好了，到此Hexo Next添加统计文章访问量功能就完成了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Hexo-Next统计文章访问量&quot;&gt;&lt;a href=&quot;#Hexo-Next统计文章访问量&quot; class=&quot;headerlink&quot; title=&quot;Hexo Next统计文章访问量&quot;&gt;&lt;/a&gt;Hexo Next统计文章访问量&lt;/h1&gt;&lt;p&gt;前往&lt;a href=&quot;htt
+      
+    
+    </summary>
+    
+      <category term="搭建教程" scheme="http://yoursite.com/categories/%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tagss/Hexo/"/>
+    
+      <category term="Next" scheme="http://yoursite.com/tagss/Next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo生成tag和categories</title>
+    <link href="http://yoursite.com/2019/08/27/Hexo%E7%94%9F%E6%88%90tag%E5%92%8Ccategories/"/>
+    <id>http://yoursite.com/2019/08/27/Hexo生成tag和categories/</id>
+    <published>2019-08-27T02:18:30.000Z</published>
+    <updated>2019-08-27T02:49:37.535Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo生成tag和categories"><a href="#Hexo生成tag和categories" class="headerlink" title="Hexo生成tag和categories"></a>Hexo生成tag和categories</h1><h2 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h2><p>打开cmd，进入站点目录下</p><p><img src="/2019/08/27/Hexo生成tag和categories/1.png" alt="1"></p><p>执行<code>hexo new page tags</code>生成标签页</p><p><img src="/2019/08/27/Hexo生成tag和categories/2.png" alt="2"></p><p>在source/tags/index.md文件中添加type: “tags”，注意：记得type:后面有空格</p><p><img src="/2019/08/27/Hexo生成tag和categories/3.png" alt="3"></p><h1 id="添加分类页面"><a href="#添加分类页面" class="headerlink" title="添加分类页面"></a>添加分类页面</h1><p>执行<code>hexo new page categories</code>生成分类页</p><p><img src="/2019/08/27/Hexo生成tag和categories/4.png" alt="4"></p><p>在source/categories/index.md文件中添加type: “categories”，注意：记得type:后面有空格</p><p><img src="/2019/08/27/Hexo生成tag和categories/5.png" alt="5"></p><h2 id="设置菜单栏"><a href="#设置菜单栏" class="headerlink" title="设置菜单栏"></a>设置菜单栏</h2><p>在themes\next主题目录下的_config.yml文件中找到menu，将tag和categories加入</p><p><img src="/2019/08/27/Hexo生成tag和categories/6.png" alt="6"></p><h2 id="引入tags和categories"><a href="#引入tags和categories" class="headerlink" title="引入tags和categories"></a>引入tags和categories</h2><p>在文章中引入tags和categories</p><p><img src="/2019/08/27/Hexo生成tag和categories/7.png" alt="7"></p><p>启动hexo后就可以看到tags和categories已经显示了</p><p><img src="/2019/08/27/Hexo生成tag和categories/8.png" alt="8"></p><p><img src="/2019/08/27/Hexo生成tag和categories/9.png" alt="9"></p><p>好了，到此Hexo生成tag和categories就完成了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Hexo生成tag和categories&quot;&gt;&lt;a href=&quot;#Hexo生成tag和categories&quot; class=&quot;headerlink&quot; title=&quot;Hexo生成tag和categories&quot;&gt;&lt;/a&gt;Hexo生成tag和categories&lt;/h1&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="搭建教程" scheme="http://yoursite.com/categories/%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tagss/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>ECS上搭建Docker</title>

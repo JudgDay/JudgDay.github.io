@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo Next统计文章访问量]]></title>
+    <url>%2F2019%2F08%2F27%2FHexo-Next%E7%BB%9F%E8%AE%A1%E6%96%87%E7%AB%A0%E8%AE%BF%E9%97%AE%E9%87%8F%2F</url>
+    <content type="text"><![CDATA[Hexo Next统计文章访问量前往LeanCloud进行注册登陆 点击创建应用 输入应用名称(名称随意), 选择开发版, 点击创建 创建成功后点击应用右上角的设置 点击存储，创建Class，Class名称设置为Counter(必须为Counter)，选择无限制，点击创建 创建后点击设置，点击应用Key，获取App ID和App Key 将主题配置文件/themes/next/_config.yml中的leancloud_visitors:的enable设为true，并将App ID和App Key填入 点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致） 完成后执行hexo clean和hexo s启动Hexo,便可以看到访问量标志了 好了，到此Hexo Next添加统计文章访问量功能就完成了]]></content>
+      <categories>
+        <category>搭建教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo生成tag和categories]]></title>
+    <url>%2F2019%2F08%2F27%2FHexo%E7%94%9F%E6%88%90tag%E5%92%8Ccategories%2F</url>
+    <content type="text"><![CDATA[Hexo生成tag和categories添加标签页面打开cmd，进入站点目录下 执行hexo new page tags生成标签页 在source/tags/index.md文件中添加type: “tags”，注意：记得type:后面有空格 添加分类页面执行hexo new page categories生成分类页 在source/categories/index.md文件中添加type: “categories”，注意：记得type:后面有空格 设置菜单栏在themes\next主题目录下的_config.yml文件中找到menu，将tag和categories加入 引入tags和categories在文章中引入tags和categories 启动hexo后就可以看到tags和categories已经显示了 好了，到此Hexo生成tag和categories就完成了]]></content>
+      <categories>
+        <category>搭建教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ECS上搭建Docker]]></title>
     <url>%2F2019%2F08%2F26%2FECS%E4%B8%8A%E6%90%AD%E5%BB%BADocker%2F</url>
     <content type="text"><![CDATA[ECS上搭建Docker检查版本执行uname -r检查系统的发行版号 若版本低于3.10.0，执行yum update升级系统 中途出现是否下载，输入y 若出现Complete!则升级安装成功 安装Docker执行yum install docker安装Docker 中途出现是否下载，输入y 若出现Complete!则Docker安装结束 执行docker -v查看是否安装成功 执行systemctl start docker启动Docker 执行systemctl status docker查看Docker状态，若显示running则启动成功 执行systemctl enable docker设置Docker开机自启 安装JDK执行docker search openjdk查找JDK镜像 执行docker pull openjdk拉取JDK镜像 执行docker images查看镜像列表，若出现openjdk则拉取成功 执行docker run -d -it --name myopenjdk openjdk创建JDK容器 执行docker ps -a查看容器列表，若出现openjdk容器则创建成功 安装Tomcat执行docker search tomcat查找Tomcat镜像 执行docker pull tomcat拉取Tomcat镜像 执行docker images查看镜像列表，若出现Tomcat则拉取成功 执行docker run -d -p 8080:8080 --name mytomcat tomcat创建Tomcat容器 执行docker ps -a查看容器列表，若出现Tomcat容器则创建成功 查看8080端口，若出现下图则Tomcat安装成功 安装MySQL执行docker search mysql查找MySQL镜像 执行docker pull mysql拉取MySQL镜像 执行docker images查看镜像列表，若出现MySQL则拉取成功 执行docker run -p 3306:3306 --name MySQL -e MYSQL_ROOT_PASSWORD=root -d mysql创建MySQL容器，注意：MYSQL_ROOT_PASSWORD=root是设置MySQL密码，可以将root替换成自己的密码 执行docker ps -a查看容器列表，若出现MySQL容器则创建成功 执行docker exec -it [CONTAINER ID] bash进入MySQL容器，注意：[CONTAINER ID]替换为自己MySQL容器的CONTAINER ID 执行mysql -u root -p登录MySQL 输入MySQL密码，若密码正确则登录成功 执行use mysql选择mysql数据库 执行ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;root&#39;设置为mysql_native_password，注意：BY后面为MySQL密码，若不想更改密码则将root改为原有密码 执行exit;退出MySQL 执行exit退出MySQL容器 使用Navicat测试MySQL是否可使用 点击连接测试，若弹出连接成功则MySQL安装成功 安装Redis执行docker search redis查找Redis镜像 执行docker pull redis拉取Redis镜像 执行docker images查看镜像列表，若出现Redis则拉取成功 执行docker run -d -p 6379:6379 --name myredis redis创建Redis容器 执行docker ps -a查看容器列表，若出现Redis容器则创建成功 使用RedisDesktopManager测试Redis是否可使用 点击测试连接，若弹出连接Redis服务器成功则Redis安装成功 安装 RabbitMQ执行docker search rabbitmq查找RabbitMQ镜像 执行docker pull rabbitmq:3-management拉取RabbitMQ镜像 执行docker images查看镜像列表，若出现RabbitMQ则拉取成功 执行docker run -d -p 5672:5672 -p 15672:15672 --name myrabbit [IMAGE ID]创建RabbitMQ容器，注意：[IMAGE ID]用自己的IMAGE ID替换 执行docker ps -a查看容器列表，若出现RabbitMQ容器则创建成功 查看8080端口，若出现下图则RabbitMQ安装成功 好了，到此我们的Docker搭建教程就完成了]]></content>
