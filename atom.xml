@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-28T04:46:07.284Z</updated>
+  <updated>2019-08-28T07:42:08.344Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,60 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo添加打赏功能</title>
-    <link href="http://yoursite.com/2019/08/28/hexo%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/"/>
-    <id>http://yoursite.com/2019/08/28/hexo添加打赏功能/</id>
-    <published>2019-08-28T03:55:39.000Z</published>
-    <updated>2019-08-28T04:46:07.284Z</updated>
+    <title>Hexo设置首页不显示文章全文</title>
+    <link href="http://yoursite.com/2019/08/28/Hexo%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%85%A8%E6%96%87/"/>
+    <id>http://yoursite.com/2019/08/28/Hexo设置首页不显示文章全文/</id>
+    <published>2019-08-28T07:42:08.000Z</published>
+    <updated>2019-08-28T07:42:08.344Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Hexo添加打赏功能"><a href="#Hexo添加打赏功能" class="headerlink" title="Hexo添加打赏功能"></a>Hexo添加打赏功能</h1><p>在主题配置文件中，找到reward_comment，将其修改为</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reward_comment: 如果对您有帮助，可以打赏哟！</span><br><span class="line">wechatpay: 图片链接或图片相对路径</span><br><span class="line">alipay: 图片链接或图片相对路径</span><br></pre></td></tr></table></figure><p>如下图所示</p><p><img src="/2019/08/28/hexo添加打赏功能/1.png" alt="1"></p><p>启动hexo后，打开文章就可以看到了</p><p><img src="/2019/08/28/hexo添加打赏功能/2.png" alt="2"></p><p>好了，到此Hexo添加打赏功能就成功了</p>]]></content>
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo Next添加本地搜索功能</title>
+    <link href="http://yoursite.com/2019/08/28/Hexo-Next%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/"/>
+    <id>http://yoursite.com/2019/08/28/Hexo-Next添加本地搜索功能/</id>
+    <published>2019-08-28T07:09:55.000Z</published>
+    <updated>2019-08-28T07:32:28.601Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo-Next添加本地搜索功能"><a href="#Hexo-Next添加本地搜索功能" class="headerlink" title="Hexo Next添加本地搜索功能"></a>Hexo Next添加本地搜索功能</h1><h2 id="安装本地搜索插件"><a href="#安装本地搜索插件" class="headerlink" title="安装本地搜索插件"></a>安装本地搜索插件</h2><p>在站点目录下执行<code>npm install hexo-generator-search --save</code>安装本地搜索插件</p><p><img src="/2019/08/28/Hexo-Next添加本地搜索功能/1.png" alt="1"></p><h2 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h2><p>在站点配置文件 _config.yml中添加如下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure><ul><li>path：索引文件的路径，相对于站点根目录</li><li>field：搜索范围，默认是 post，还可以选择 page、all，设置成 all 表示搜索所有页面</li><li>limit：限制搜索的条目数</li></ul><h2 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h2><p>在主题配置文件_config.yml中找到如下内容：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: false</span><br><span class="line">  trigger: auto</span><br><span class="line">  top_n_per_article: 1</span><br></pre></td></tr></table></figure><p> 将enable设成true</p><p>top_n_per_article 字段表示在每篇文章中显示的搜索结果数量，设成 -1 会显示每篇文章的所有搜索结果数量。</p><p>更改后如下</p><p><img src="/2019/08/28/Hexo-Next添加本地搜索功能/2.png" alt="2"></p><h2 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h2><p>启动后便可以在侧边栏看到本地搜索功能了</p><p><img src="/2019/08/28/Hexo-Next添加本地搜索功能/3.png" alt="3"></p><p>好了，到此Hexo添加本地搜索功能就成功了</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Hexo添加打赏功能&quot;&gt;&lt;a href=&quot;#Hexo添加打赏功能&quot; class=&quot;headerlink&quot; title=&quot;Hexo添加打赏功能&quot;&gt;&lt;/a&gt;Hexo添加打赏功能&lt;/h1&gt;&lt;p&gt;在主题配置文件中，找到reward_comment，将其修改为&lt;/p&gt;
-&lt;f
+        &lt;h1 id=&quot;Hexo-Next添加本地搜索功能&quot;&gt;&lt;a href=&quot;#Hexo-Next添加本地搜索功能&quot; class=&quot;headerlink&quot; title=&quot;Hexo Next添加本地搜索功能&quot;&gt;&lt;/a&gt;Hexo Next添加本地搜索功能&lt;/h1&gt;&lt;h2 id=&quot;安装本地搜
+      
+    
+    </summary>
+    
+      <category term="搭建教程" scheme="http://yoursite.com/categories/%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tagss/Hexo/"/>
+    
+      <category term="Next" scheme="http://yoursite.com/tagss/Next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo添加打赏功能</title>
+    <link href="http://yoursite.com/2019/08/28/hexo%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/"/>
+    <id>http://yoursite.com/2019/08/28/hexo添加打赏功能/</id>
+    <published>2019-08-28T03:55:39.000Z</published>
+    <updated>2019-08-28T07:47:39.615Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo添加打赏功能"><a href="#Hexo添加打赏功能" class="headerlink" title="Hexo添加打赏功能"></a>Hexo添加打赏功能</h1><h2 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h2><p>在主题配置文件中，找到reward_comment，将其修改为</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reward_comment: 如果对您有帮助，可以打赏哟！</span><br><span class="line">wechatpay: 图片链接或图片相对路径</span><br><span class="line">alipay: 图片链接或图片相对路径</span><br></pre></td></tr></table></figure><p>如下图所示</p><p><img src="/2019/08/28/hexo添加打赏功能/1.png" alt="1"></p><h2 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h2><p>启动hexo后，打开文章就可以看到了</p><p><img src="/2019/08/28/hexo添加打赏功能/2.png" alt="2"></p><p>好了，到此Hexo添加打赏功能就成功了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Hexo添加打赏功能&quot;&gt;&lt;a href=&quot;#Hexo添加打赏功能&quot; class=&quot;headerlink&quot; title=&quot;Hexo添加打赏功能&quot;&gt;&lt;/a&gt;Hexo添加打赏功能&lt;/h1&gt;&lt;h2 id=&quot;修改主题配置文件&quot;&gt;&lt;a href=&quot;#修改主题配置文件&quot; cla
       
     
     </summary>
@@ -47,9 +87,9 @@
     <link href="http://yoursite.com/2019/08/28/Hexo%E6%B7%BB%E5%8A%A0RSS/"/>
     <id>http://yoursite.com/2019/08/28/Hexo添加RSS/</id>
     <published>2019-08-28T03:15:34.000Z</published>
-    <updated>2019-08-28T03:44:33.468Z</updated>
+    <updated>2019-08-28T07:34:57.763Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Hexo添加RSS"><a href="#Hexo添加RSS" class="headerlink" title="Hexo添加RSS"></a>Hexo添加RSS</h1><h2 id="安装RSS插件"><a href="#安装RSS插件" class="headerlink" title="安装RSS插件"></a>安装RSS插件</h2><p>在站点目录下执行<code>npm install hexo-generator-feed --save</code>安装RSS插件</p><p><img src="/2019/08/28/Hexo添加RSS/1.png" alt="1"></p><h2 id="配置RSS"><a href="#配置RSS" class="headerlink" title="配置RSS"></a>配置RSS</h2><p>在站点目录下的配置文件_config.yml中，加入以下配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure><p>主题目录下的配置文件_config.yml文件中，将RSS设置为/atom.xml</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rss: /atom.xml</span><br></pre></td></tr></table></figure><h2 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h2><p>启动后就能看到RSS已经显示</p><p><img src="/2019/08/28/Hexo添加RSS/2.png" alt="2"></p><p>好了，到此Hexo添加RSS功能就完成了</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Hexo添加RSS"><a href="#Hexo添加RSS" class="headerlink" title="Hexo添加RSS"></a>Hexo添加RSS</h1><h2 id="安装RSS插件"><a href="#安装RSS插件" class="headerlink" title="安装RSS插件"></a>安装RSS插件</h2><p>在站点目录下执行<code>npm install hexo-generator-feed --save</code>安装RSS插件</p><p><img src="/2019/08/28/Hexo添加RSS/1.png" alt="1"></p><h2 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h2><p>在站点目录下的配置文件_config.yml中，加入以下配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure><h2 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h2><p>主题目录下的配置文件_config.yml文件中，将RSS设置为/atom.xml</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rss: /atom.xml</span><br></pre></td></tr></table></figure><h2 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h2><p>启动后就能看到RSS已经显示</p><p><img src="/2019/08/28/Hexo添加RSS/2.png" alt="2"></p><p>好了，到此Hexo添加RSS功能就完成了</p>]]></content>
     
     <summary type="html">
     

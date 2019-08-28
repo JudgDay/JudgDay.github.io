@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo设置首页不显示文章全文]]></title>
+    <url>%2F2019%2F08%2F28%2FHexo%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%85%A8%E6%96%87%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo Next添加本地搜索功能]]></title>
+    <url>%2F2019%2F08%2F28%2FHexo-Next%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[Hexo Next添加本地搜索功能安装本地搜索插件在站点目录下执行npm install hexo-generator-search --save安装本地搜索插件 修改站点配置文件在站点配置文件 _config.yml中添加如下内容 12345search: path: search.xml field: post format: html limit: 10000 path：索引文件的路径，相对于站点根目录 field：搜索范围，默认是 post，还可以选择 page、all，设置成 all 表示搜索所有页面 limit：限制搜索的条目数 修改主题配置文件在主题配置文件_config.yml中找到如下内容： 1234local_search: enable: false trigger: auto top_n_per_article: 1 将enable设成true top_n_per_article 字段表示在每篇文章中显示的搜索结果数量，设成 -1 会显示每篇文章的所有搜索结果数量。 更改后如下 启动Hexo启动后便可以在侧边栏看到本地搜索功能了 好了，到此Hexo添加本地搜索功能就成功了]]></content>
+      <categories>
+        <category>搭建教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo添加打赏功能]]></title>
     <url>%2F2019%2F08%2F28%2Fhexo%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD%2F</url>
-    <content type="text"><![CDATA[Hexo添加打赏功能在主题配置文件中，找到reward_comment，将其修改为 123reward_comment: 如果对您有帮助，可以打赏哟！wechatpay: 图片链接或图片相对路径alipay: 图片链接或图片相对路径 如下图所示 启动hexo后，打开文章就可以看到了 好了，到此Hexo添加打赏功能就成功了]]></content>
+    <content type="text"><![CDATA[Hexo添加打赏功能修改主题配置文件在主题配置文件中，找到reward_comment，将其修改为 123reward_comment: 如果对您有帮助，可以打赏哟！wechatpay: 图片链接或图片相对路径alipay: 图片链接或图片相对路径 如下图所示 启动Hexo启动hexo后，打开文章就可以看到了 好了，到此Hexo添加打赏功能就成功了]]></content>
       <categories>
         <category>搭建教程</category>
       </categories>
@@ -14,7 +31,7 @@
   <entry>
     <title><![CDATA[Hexo添加RSS]]></title>
     <url>%2F2019%2F08%2F28%2FHexo%E6%B7%BB%E5%8A%A0RSS%2F</url>
-    <content type="text"><![CDATA[Hexo添加RSS安装RSS插件在站点目录下执行npm install hexo-generator-feed --save安装RSS插件 配置RSS在站点目录下的配置文件_config.yml中，加入以下配置 1234feed: type: atom path: atom.xml limit: 20 主题目录下的配置文件_config.yml文件中，将RSS设置为/atom.xml 1rss: /atom.xml 启动Hexo启动后就能看到RSS已经显示 好了，到此Hexo添加RSS功能就完成了]]></content>
+    <content type="text"><![CDATA[Hexo添加RSS安装RSS插件在站点目录下执行npm install hexo-generator-feed --save安装RSS插件 修改站点配置文件在站点目录下的配置文件_config.yml中，加入以下配置 1234feed: type: atom path: atom.xml limit: 20 修改主题配置文件主题目录下的配置文件_config.yml文件中，将RSS设置为/atom.xml 1rss: /atom.xml 启动Hexo启动后就能看到RSS已经显示 好了，到此Hexo添加RSS功能就完成了]]></content>
       <categories>
         <category>搭建教程</category>
       </categories>
