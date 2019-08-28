@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[Hexo设置首页不显示文章全文]]></title>
     <url>%2F2019%2F08%2F28%2FHexo%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%85%A8%E6%96%87%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[Hexo设置首页不显示文章全文修改主题配置文件在主题配置文件_config.yml文件中，找到如下： 将enable改成true就可以了在首页启动显示文章预览了 length是显示预览的长度。 启动Hexo 好了，到此Hexo设置首页不显示原文就安装成功了]]></content>
+      <categories>
+        <category>搭建教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hexo Next添加本地搜索功能]]></title>

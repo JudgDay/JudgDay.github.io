@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-28T07:42:08.344Z</updated>
+  <updated>2019-08-28T08:40:06.389Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,23 @@
     <link href="http://yoursite.com/2019/08/28/Hexo%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%85%A8%E6%96%87/"/>
     <id>http://yoursite.com/2019/08/28/Hexo设置首页不显示文章全文/</id>
     <published>2019-08-28T07:42:08.000Z</published>
-    <updated>2019-08-28T07:42:08.344Z</updated>
+    <updated>2019-08-28T08:40:06.389Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo设置首页不显示文章全文"><a href="#Hexo设置首页不显示文章全文" class="headerlink" title="Hexo设置首页不显示文章全文"></a>Hexo设置首页不显示文章全文</h1><h2 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h2><p>在主题配置文件_config.yml文件中，找到如下：</p><p><img src="/2019/08/28/Hexo设置首页不显示文章全文/1.png" alt="1"></p><p>将enable改成true就可以了在首页启动显示文章预览了</p><p>length是显示预览的长度。</p><h2 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h2><p><img src="/2019/08/28/Hexo设置首页不显示文章全文/2.png" alt="2"></p><p>好了，到此Hexo设置首页不显示原文就安装成功了</p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h1 id=&quot;Hexo设置首页不显示文章全文&quot;&gt;&lt;a href=&quot;#Hexo设置首页不显示文章全文&quot; class=&quot;headerlink&quot; title=&quot;Hexo设置首页不显示文章全文&quot;&gt;&lt;/a&gt;Hexo设置首页不显示文章全文&lt;/h1&gt;&lt;h2 id=&quot;修改主题配置文件&quot;&gt;&lt;a 
+      
+    
     </summary>
     
+      <category term="搭建教程" scheme="http://yoursite.com/categories/%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tagss/Hexo/"/>
     
   </entry>
   
