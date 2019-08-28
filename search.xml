@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo添加打赏功能]]></title>
+    <url>%2F2019%2F08%2F28%2Fhexo%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[Hexo添加打赏功能在主题配置文件中，找到reward_comment，将其修改为 123reward_comment: 如果对您有帮助，可以打赏哟！wechatpay: 图片链接或图片相对路径alipay: 图片链接或图片相对路径 如下图所示 启动hexo后，打开文章就可以看到了 好了，到此Hexo添加打赏功能就成功了]]></content>
+      <categories>
+        <category>搭建教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo添加RSS]]></title>
+    <url>%2F2019%2F08%2F28%2FHexo%E6%B7%BB%E5%8A%A0RSS%2F</url>
+    <content type="text"><![CDATA[Hexo添加RSS安装RSS插件在站点目录下执行npm install hexo-generator-feed --save安装RSS插件 配置RSS在站点目录下的配置文件_config.yml中，加入以下配置 1234feed: type: atom path: atom.xml limit: 20 主题目录下的配置文件_config.yml文件中，将RSS设置为/atom.xml 1rss: /atom.xml 启动Hexo启动后就能看到RSS已经显示 好了，到此Hexo添加RSS功能就完成了]]></content>
+      <categories>
+        <category>搭建教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo Next统计文章访问量]]></title>
     <url>%2F2019%2F08%2F27%2FHexo-Next%E7%BB%9F%E8%AE%A1%E6%96%87%E7%AB%A0%E8%AE%BF%E9%97%AE%E9%87%8F%2F</url>
     <content type="text"><![CDATA[Hexo Next统计文章访问量前往LeanCloud进行注册登陆 点击创建应用 输入应用名称(名称随意), 选择开发版, 点击创建 创建成功后点击应用右上角的设置 点击存储，创建Class，Class名称设置为Counter(必须为Counter)，选择无限制，点击创建 创建后点击设置，点击应用Key，获取App ID和App Key 将主题配置文件/themes/next/_config.yml中的leancloud_visitors:的enable设为true，并将App ID和App Key填入 点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致） 完成后执行hexo clean和hexo s启动Hexo,便可以看到访问量标志了 好了，到此Hexo Next添加统计文章访问量功能就完成了]]></content>
