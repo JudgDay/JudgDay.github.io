@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-28T08:40:06.389Z</updated>
+  <updated>2019-08-29T08:50:35.043Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo Next使用Valine作评论系统</title>
+    <link href="http://yoursite.com/2019/08/29/Hexo-Next%E4%BD%BF%E7%94%A8Valine%E4%BD%9C%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://yoursite.com/2019/08/29/Hexo-Next使用Valine作评论系统/</id>
+    <published>2019-08-29T07:56:32.000Z</published>
+    <updated>2019-08-29T08:50:35.043Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo-Next使用Valine作评论系统"><a href="#Hexo-Next使用Valine作评论系统" class="headerlink" title="Hexo Next使用Valine作评论系统"></a>Hexo Next使用Valine作评论系统</h2><h2 id="注册LeanCloud"><a href="#注册LeanCloud" class="headerlink" title="注册LeanCloud"></a>注册LeanCloud</h2><p>前往<a href="https://leancloud.cn/dashboard/login.html#/signup" target="_blank" rel="noopener">LeanCloud</a>进行注册登陆</p><h2 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h2><p>点击创建应用</p><p><img src="/2019/08/29/Hexo-Next使用Valine作评论系统/1.png" alt="1"></p><p>输入应用名称(名称随意), 选择开发版, 点击创建</p><p><img src="/2019/08/29/Hexo-Next使用Valine作评论系统/2.png" alt="2"></p><h2 id="配置应用"><a href="#配置应用" class="headerlink" title="配置应用"></a>配置应用</h2><p>创建成功后点击应用右上角的设置</p><p><img src="/2019/08/29/Hexo-Next使用Valine作评论系统/3.png" alt="3"></p><p>点击存储，创建Class，Class名称设置为Comment(必须为Comment)，选择无限制，点击创建</p><p><img src="/2019/08/29/Hexo-Next使用Valine作评论系统/1.png" alt="4"></p><p>创建后点击设置，点击应用Key，获取App ID和App Key</p><p><img src="/2019/08/29/Hexo-Next使用Valine作评论系统/5.png" alt="5"></p><h2 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h2><p>将主题配置文件/themes/next/_config.yml中的<code>Valine:</code>的<code>enable</code>设为<code>true</code>，并将App ID和App Key填入</p><p><img src="/2019/08/29/Hexo-Next使用Valine作评论系统/2.png" alt="6"></p><h2 id="配置域名"><a href="#配置域名" class="headerlink" title="配置域名"></a>配置域名</h2><p>点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致）</p><p><img src="/2019/08/29/Hexo-Next使用Valine作评论系统/7.png" alt="7"></p><h2 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h2><p>完成后执行<code>hexo clean</code>和<code>hexo s</code>启动Hexo,打开文章便可以看到评论了</p><p><img src="/2019/08/29/Hexo-Next使用Valine作评论系统/3.png" alt="8"></p><p>好了，到此Hexo Next使用Valine作评论系统就完成了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Hexo-Next使用Valine作评论系统&quot;&gt;&lt;a href=&quot;#Hexo-Next使用Valine作评论系统&quot; class=&quot;headerlink&quot; title=&quot;Hexo Next使用Valine作评论系统&quot;&gt;&lt;/a&gt;Hexo Next使用Valine作评论
+      
+    
+    </summary>
+    
+      <category term="搭建教程" scheme="http://yoursite.com/categories/%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tagss/Hexo/"/>
+    
+      <category term="Next" scheme="http://yoursite.com/tagss/Next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo设置侧边栏社交小图标</title>
+    <link href="http://yoursite.com/2019/08/29/Hexo%E8%AE%BE%E7%BD%AE%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%A4%BE%E4%BA%A4%E5%B0%8F%E5%9B%BE%E6%A0%87/"/>
+    <id>http://yoursite.com/2019/08/29/Hexo设置侧边栏社交小图标/</id>
+    <published>2019-08-29T02:52:52.000Z</published>
+    <updated>2019-08-29T07:48:07.133Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo设置侧边栏社交小图标"><a href="#Hexo设置侧边栏社交小图标" class="headerlink" title="Hexo设置侧边栏社交小图标"></a>Hexo设置侧边栏社交小图标</h1><h2 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h2><p>在主题配置文件里找到social_icons，将enable修改为true,并将链接写入</p><p><img src="/2019/08/29/Hexo设置侧边栏社交小图标/1.png" alt="1"></p><h2 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h2><p>启动Hexo后，便可以看到侧边栏已显示社交小图标</p><p><img src="/2019/08/29/Hexo设置侧边栏社交小图标/2.png" alt="2"></p><p>好了，到此Hexo设置侧边栏社交小图标就安装成功了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Hexo设置侧边栏社交小图标&quot;&gt;&lt;a href=&quot;#Hexo设置侧边栏社交小图标&quot; class=&quot;headerlink&quot; title=&quot;Hexo设置侧边栏社交小图标&quot;&gt;&lt;/a&gt;Hexo设置侧边栏社交小图标&lt;/h1&gt;&lt;h2 id=&quot;修改主题配置文件&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="搭建教程" scheme="http://yoursite.com/categories/%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tagss/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo设置首页不显示文章全文</title>
@@ -123,15 +175,15 @@
     <link href="http://yoursite.com/2019/08/27/Hexo-Next%E7%BB%9F%E8%AE%A1%E6%96%87%E7%AB%A0%E8%AE%BF%E9%97%AE%E9%87%8F/"/>
     <id>http://yoursite.com/2019/08/27/Hexo-Next统计文章访问量/</id>
     <published>2019-08-27T03:00:48.000Z</published>
-    <updated>2019-08-27T03:31:22.948Z</updated>
+    <updated>2019-08-29T08:46:45.088Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Hexo-Next统计文章访问量"><a href="#Hexo-Next统计文章访问量" class="headerlink" title="Hexo Next统计文章访问量"></a>Hexo Next统计文章访问量</h1><p>前往<a href="https://leancloud.cn/dashboard/login.html#/signup" target="_blank" rel="noopener">LeanCloud</a>进行注册登陆</p><p>点击创建应用</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/1.png" alt="1"></p><p>输入应用名称(名称随意), 选择开发版, 点击创建</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/2.png" alt="2"></p><p>创建成功后点击应用右上角的设置</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/3.png" alt="3"></p><p>点击存储，创建Class，Class名称设置为<code>Counter</code>(必须为<code>Counter</code>)，选择无限制，点击创建</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/4.png" alt="4"></p><p>创建后点击设置，点击应用Key，获取App ID和App Key</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/5.png" alt="5"></p><p>将主题配置文件/themes/next/_config.yml中的<code>leancloud_visitors:</code>的<code>enable</code>设为<code>true</code>，并将App ID和App Key填入</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/6.png" alt="6"></p><p>点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致）</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/7.png" alt="7"></p><p>完成后执行<code>hexo clean</code>和<code>hexo s</code>启动Hexo,便可以看到访问量标志了</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/8.png" alt="8"></p><p>好了，到此Hexo Next添加统计文章访问量功能就完成了</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Hexo-Next统计文章访问量"><a href="#Hexo-Next统计文章访问量" class="headerlink" title="Hexo Next统计文章访问量"></a>Hexo Next统计文章访问量</h1><h2 id="注册LeanCloud"><a href="#注册LeanCloud" class="headerlink" title="注册LeanCloud"></a>注册LeanCloud</h2><p>前往<a href="https://leancloud.cn/dashboard/login.html#/signup" target="_blank" rel="noopener">LeanCloud</a>进行注册登陆</p><h2 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h2><p>点击创建应用</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/1.png" alt="1"></p><p>输入应用名称(名称随意), 选择开发版, 点击创建</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/2.png" alt="2"></p><h2 id="配置应用"><a href="#配置应用" class="headerlink" title="配置应用"></a>配置应用</h2><p>创建成功后点击应用右上角的设置</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/3.png" alt="3"></p><p>点击存储，创建Class，Class名称设置为Counter(必须为Counter)，选择无限制，点击创建</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/4.png" alt="4"></p><p>创建后点击设置，点击应用Key，获取App ID和App Key</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/5.png" alt="5"></p><h2 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h2><p>将主题配置文件/themes/next/_config.yml中的<code>leancloud_visitors:</code>的<code>enable</code>设为<code>true</code>，并将App ID和App Key填入</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/6.png" alt="6"></p><h2 id="配置域名"><a href="#配置域名" class="headerlink" title="配置域名"></a>配置域名</h2><p>点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致）</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/7.png" alt="7"></p><h2 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h2><p>完成后执行<code>hexo clean</code>和<code>hexo s</code>启动Hexo,便可以看到访问量标志了</p><p><img src="/2019/08/27/Hexo-Next统计文章访问量/8.png" alt="8"></p><p>好了，到此Hexo Next添加统计文章访问量功能就完成了</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Hexo-Next统计文章访问量&quot;&gt;&lt;a href=&quot;#Hexo-Next统计文章访问量&quot; class=&quot;headerlink&quot; title=&quot;Hexo Next统计文章访问量&quot;&gt;&lt;/a&gt;Hexo Next统计文章访问量&lt;/h1&gt;&lt;p&gt;前往&lt;a href=&quot;htt
+        &lt;h1 id=&quot;Hexo-Next统计文章访问量&quot;&gt;&lt;a href=&quot;#Hexo-Next统计文章访问量&quot; class=&quot;headerlink&quot; title=&quot;Hexo Next统计文章访问量&quot;&gt;&lt;/a&gt;Hexo Next统计文章访问量&lt;/h1&gt;&lt;h2 id=&quot;注册LeanClo
       
     
     </summary>

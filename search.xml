@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo Next使用Valine作评论系统]]></title>
+    <url>%2F2019%2F08%2F29%2FHexo-Next%E4%BD%BF%E7%94%A8Valine%E4%BD%9C%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%2F</url>
+    <content type="text"><![CDATA[Hexo Next使用Valine作评论系统注册LeanCloud前往LeanCloud进行注册登陆 创建应用点击创建应用 输入应用名称(名称随意), 选择开发版, 点击创建 配置应用创建成功后点击应用右上角的设置 点击存储，创建Class，Class名称设置为Comment(必须为Comment)，选择无限制，点击创建 创建后点击设置，点击应用Key，获取App ID和App Key 修改主题配置文件将主题配置文件/themes/next/_config.yml中的Valine:的enable设为true，并将App ID和App Key填入 配置域名点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致） 启动Hexo完成后执行hexo clean和hexo s启动Hexo,打开文章便可以看到评论了 好了，到此Hexo Next使用Valine作评论系统就完成了]]></content>
+      <categories>
+        <category>搭建教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo设置侧边栏社交小图标]]></title>
+    <url>%2F2019%2F08%2F29%2FHexo%E8%AE%BE%E7%BD%AE%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%A4%BE%E4%BA%A4%E5%B0%8F%E5%9B%BE%E6%A0%87%2F</url>
+    <content type="text"><![CDATA[Hexo设置侧边栏社交小图标修改主题配置文件在主题配置文件里找到social_icons，将enable修改为true,并将链接写入 启动Hexo启动Hexo后，便可以看到侧边栏已显示社交小图标 好了，到此Hexo设置侧边栏社交小图标就安装成功了]]></content>
+      <categories>
+        <category>搭建教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo设置首页不显示文章全文]]></title>
     <url>%2F2019%2F08%2F28%2FHexo%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%85%A8%E6%96%87%2F</url>
     <content type="text"><![CDATA[Hexo设置首页不显示文章全文修改主题配置文件在主题配置文件_config.yml文件中，找到如下： 将enable改成true就可以了在首页启动显示文章预览了 length是显示预览的长度。 启动Hexo 好了，到此Hexo设置首页不显示原文就安装成功了]]></content>
@@ -48,7 +71,7 @@
   <entry>
     <title><![CDATA[Hexo Next统计文章访问量]]></title>
     <url>%2F2019%2F08%2F27%2FHexo-Next%E7%BB%9F%E8%AE%A1%E6%96%87%E7%AB%A0%E8%AE%BF%E9%97%AE%E9%87%8F%2F</url>
-    <content type="text"><![CDATA[Hexo Next统计文章访问量前往LeanCloud进行注册登陆 点击创建应用 输入应用名称(名称随意), 选择开发版, 点击创建 创建成功后点击应用右上角的设置 点击存储，创建Class，Class名称设置为Counter(必须为Counter)，选择无限制，点击创建 创建后点击设置，点击应用Key，获取App ID和App Key 将主题配置文件/themes/next/_config.yml中的leancloud_visitors:的enable设为true，并将App ID和App Key填入 点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致） 完成后执行hexo clean和hexo s启动Hexo,便可以看到访问量标志了 好了，到此Hexo Next添加统计文章访问量功能就完成了]]></content>
+    <content type="text"><![CDATA[Hexo Next统计文章访问量注册LeanCloud前往LeanCloud进行注册登陆 创建应用点击创建应用 输入应用名称(名称随意), 选择开发版, 点击创建 配置应用创建成功后点击应用右上角的设置 点击存储，创建Class，Class名称设置为Counter(必须为Counter)，选择无限制，点击创建 创建后点击设置，点击应用Key，获取App ID和App Key 修改主题配置文件将主题配置文件/themes/next/_config.yml中的leancloud_visitors:的enable设为true，并将App ID和App Key填入 配置域名点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致） 启动Hexo完成后执行hexo clean和hexo s启动Hexo,便可以看到访问量标志了 好了，到此Hexo Next添加统计文章访问量功能就完成了]]></content>
       <categories>
         <category>搭建教程</category>
       </categories>
