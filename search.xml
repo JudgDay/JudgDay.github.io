@@ -48,7 +48,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo添加打赏功能]]></title>
-    <url>%2F2019%2F08%2F28%2Fhexo%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD%2F</url>
+    <url>%2F2019%2F08%2F28%2FHexo%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[Hexo添加打赏功能修改主题配置文件在主题配置文件中，找到reward_comment，将其修改为 123reward_comment: 如果对您有帮助，可以打赏哟！wechatpay: 图片链接或图片相对路径alipay: 图片链接或图片相对路径 如下图所示 启动Hexo启动hexo后，打开文章就可以看到了 好了，到此Hexo添加打赏功能就成功了]]></content>
       <categories>
         <category>搭建教程</category>
