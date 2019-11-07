@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MD5加密]]></title>
+    <url>%2F2019%2F11%2F07%2FMD5%E5%8A%A0%E5%AF%86%2F</url>
+    <content type="text"><![CDATA[MD5加密MD5加密后转为小写16进制12345678910111213141516171819202122232425public static String Md5(String plainText) &#123; StringBuffer buf = new StringBuffer(""); String result; try &#123; MessageDigest md = MessageDigest.getInstance("MD5"); md.update(plainText.getBytes()); byte b[] = md.digest(); int i; for (int offset = 0; offset &lt; b.length; offset++) &#123; i = b[offset]; if (i &lt; 0) i += 256; if (i &lt; 16) buf.append("0"); buf.append(Integer.toHexString(i)); &#125; byte[] bytes = new String(buf).getBytes(); result = DatatypeConverter.printHexBinary(bytes); &#125; catch (NoSuchAlgorithmException e) &#123; throw new RuntimeException(e); &#125; return result; &#125; MD5加密后转为小写32进制12345678910111213141516171819202122public static String encryption(String plainText) &#123; String re_md5 = new String(); try &#123; MessageDigest md = MessageDigest.getInstance("MD5"); md.update(plainText.getBytes()); byte b[] = md.digest(); int i; StringBuffer buf = new StringBuffer(""); for (int offset = 0; offset &lt; b.length; offset++) &#123; i = b[offset]; if (i &lt; 0) i += 256; if (i &lt; 16) buf.append("0"); buf.append(Integer.toHexString(i)); &#125; re_md5 = buf.toString(); &#125; catch (Exception e) &#123; e.printStackTrace(); &#125; return re_md5; &#125;]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>MD5</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo Next使用Valine作评论系统]]></title>
     <url>%2F2019%2F08%2F29%2FHexo-Next%E4%BD%BF%E7%94%A8Valine%E4%BD%9C%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%2F</url>
     <content type="text"><![CDATA[Hexo Next使用Valine作评论系统注册LeanCloud前往LeanCloud进行注册登陆 创建应用点击创建应用 输入应用名称(名称随意), 选择开发版, 点击创建 配置应用创建成功后点击应用右上角的设置 点击存储，创建Class，Class名称设置为Comment(必须为Comment)，选择无限制，点击创建 创建后点击设置，点击应用Key，获取App ID和App Key 修改主题配置文件将主题配置文件/themes/next/_config.yml中的Valine:的enable设为true，并将App ID和App Key填入 配置域名点击安全中心, 填写自己博客对应的域名（注意协议、域名和端口号需严格一致） 启动Hexo完成后执行hexo clean和hexo s启动Hexo,打开文章便可以看到评论了 好了，到此Hexo Next使用Valine作评论系统就完成了]]></content>
