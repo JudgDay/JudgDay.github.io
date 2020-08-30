@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[new start]]></title>
+    <url>%2F2020%2F08%2F30%2Fnew-start%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[MD5加密]]></title>
     <url>%2F2019%2F11%2F07%2FMD5%E5%8A%A0%E5%AF%86%2F</url>
     <content type="text"><![CDATA[MD5加密MD5加密后转为小写16进制12345678910111213141516171819202122232425public static String Md5(String plainText) &#123; StringBuffer buf = new StringBuffer(""); String result; try &#123; MessageDigest md = MessageDigest.getInstance("MD5"); md.update(plainText.getBytes()); byte b[] = md.digest(); int i; for (int offset = 0; offset &lt; b.length; offset++) &#123; i = b[offset]; if (i &lt; 0) i += 256; if (i &lt; 16) buf.append("0"); buf.append(Integer.toHexString(i)); &#125; byte[] bytes = new String(buf).getBytes(); result = DatatypeConverter.printHexBinary(bytes); &#125; catch (NoSuchAlgorithmException e) &#123; throw new RuntimeException(e); &#125; return result; &#125; MD5加密后转为小写32进制12345678910111213141516171819202122public static String encryption(String plainText) &#123; String re_md5 = new String(); try &#123; MessageDigest md = MessageDigest.getInstance("MD5"); md.update(plainText.getBytes()); byte b[] = md.digest(); int i; StringBuffer buf = new StringBuffer(""); for (int offset = 0; offset &lt; b.length; offset++) &#123; i = b[offset]; if (i &lt; 0) i += 256; if (i &lt; 16) buf.append("0"); buf.append(Integer.toHexString(i)); &#125; re_md5 = buf.toString(); &#125; catch (Exception e) &#123; e.printStackTrace(); &#125; return re_md5; &#125;]]></content>
