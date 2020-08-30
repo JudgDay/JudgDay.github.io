@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-30T08:09:02.558Z</updated>
+  <updated>2020-08-30T08:56:43.688Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,16 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>new start</title>
-    <link href="http://yoursite.com/2020/08/30/new-start/"/>
-    <id>http://yoursite.com/2020/08/30/new-start/</id>
-    <published>2020-08-30T08:09:02.000Z</published>
-    <updated>2020-08-30T08:09:02.558Z</updated>
+    <title>Git修改查看用户名和邮箱</title>
+    <link href="http://yoursite.com/2020/08/30/Git%E4%BF%AE%E6%94%B9%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1/"/>
+    <id>http://yoursite.com/2020/08/30/Git修改查看用户名和邮箱/</id>
+    <published>2020-08-30T08:41:16.000Z</published>
+    <updated>2020-08-30T08:56:43.688Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Git修改查看用户名和邮箱"><a href="#Git修改查看用户名和邮箱" class="headerlink" title="Git修改查看用户名和邮箱"></a>Git修改查看用户名和邮箱</h1><h2 id="修改用户名和邮箱"><a href="#修改用户名和邮箱" class="headerlink" title="修改用户名和邮箱"></a>修改用户名和邮箱</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;username&quot;</span><br><span class="line">$ git config --global user.email &quot;email&quot;</span><br></pre></td></tr></table></figure><p><img src="http://istuadmission.com/Git修改查看用户名和邮箱/1.png" alt="1"></p><h2 id="查看用户名和邮箱"><a href="#查看用户名和邮箱" class="headerlink" title="查看用户名和邮箱"></a>查看用户名和邮箱</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config user.name</span><br><span class="line">$ git config user.email</span><br></pre></td></tr></table></figure><p><img src="http://istuadmission.com/Git修改查看用户名和邮箱/2.png" alt="1"></p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h1 id=&quot;Git修改查看用户名和邮箱&quot;&gt;&lt;a href=&quot;#Git修改查看用户名和邮箱&quot; class=&quot;headerlink&quot; title=&quot;Git修改查看用户名和邮箱&quot;&gt;&lt;/a&gt;Git修改查看用户名和邮箱&lt;/h1&gt;&lt;h2 id=&quot;修改用户名和邮箱&quot;&gt;&lt;a href=&quot;#修
+      
+    
     </summary>
     
+      <category term="小技巧" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Git" scheme="http://yoursite.com/tagss/Git/"/>
     
   </entry>
   
@@ -163,8 +174,8 @@
   
   <entry>
     <title>Hexo添加打赏功能</title>
-    <link href="http://yoursite.com/2019/08/28/hexo%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/"/>
-    <id>http://yoursite.com/2019/08/28/hexo添加打赏功能/</id>
+    <link href="http://yoursite.com/2019/08/28/Hexo%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/"/>
+    <id>http://yoursite.com/2019/08/28/Hexo添加打赏功能/</id>
     <published>2019-08-28T03:55:39.000Z</published>
     <updated>2019-09-24T02:15:26.000Z</updated>
     
