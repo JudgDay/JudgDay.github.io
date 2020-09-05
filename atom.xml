@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-30T08:56:43.688Z</updated>
+  <updated>2020-09-05T13:23:06.079Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>后台运行与停止jar包</title>
+    <link href="http://yoursite.com/2020/09/05/%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E4%B8%8E%E5%81%9C%E6%AD%A2jar%E5%8C%85/"/>
+    <id>http://yoursite.com/2020/09/05/后台运行与停止jar包/</id>
+    <published>2020-09-05T07:50:40.000Z</published>
+    <updated>2020-09-05T13:23:06.079Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="后台运行与停止jar包"><a href="#后台运行与停止jar包" class="headerlink" title="后台运行与停止jar包"></a>后台运行与停止jar包</h1><h2 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar jar包名 &amp;</span><br></pre></td></tr></table></figure><p>nohup：加在一个命令的最前面，表示不挂断的运行命令</p><p>&amp;：加载一个命令的最后面，表示这个命令放在后台执行</p><h2 id="后台停止"><a href="#后台停止" class="headerlink" title="后台停止"></a>后台停止</h2><ol><li><p>找到进程号</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux|grep jar包名</span><br></pre></td></tr></table></figure><p><img src="http://istuadmission.com/后台运行与停止jar包/1.png" alt="1"></p></li><li><p>杀死进程</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 进程号(红框标记的进程号)</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;后台运行与停止jar包&quot;&gt;&lt;a href=&quot;#后台运行与停止jar包&quot; class=&quot;headerlink&quot; title=&quot;后台运行与停止jar包&quot;&gt;&lt;/a&gt;后台运行与停止jar包&lt;/h1&gt;&lt;h2 id=&quot;后台运行&quot;&gt;&lt;a href=&quot;#后台运行&quot; class=&quot;
+      
+    
+    </summary>
+    
+      <category term="小技巧" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tagss/Java/"/>
+    
+      <category term="Jar" scheme="http://yoursite.com/tagss/Jar/"/>
+    
+  </entry>
   
   <entry>
     <title>Git修改查看用户名和邮箱</title>

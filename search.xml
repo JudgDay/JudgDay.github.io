@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[后台运行与停止jar包]]></title>
+    <url>%2F2020%2F09%2F05%2F%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E4%B8%8E%E5%81%9C%E6%AD%A2jar%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[后台运行与停止jar包后台运行1nohup java -jar jar包名 &amp; nohup：加在一个命令的最前面，表示不挂断的运行命令 &amp;：加载一个命令的最后面，表示这个命令放在后台执行 后台停止 找到进程号 1ps aux|grep jar包名 杀死进程 1kill -9 进程号(红框标记的进程号)]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Jar</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Git修改查看用户名和邮箱]]></title>
     <url>%2F2020%2F08%2F30%2FGit%E4%BF%AE%E6%94%B9%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%2F</url>
     <content type="text"><![CDATA[Git修改查看用户名和邮箱修改用户名和邮箱12$ git config --global user.name &quot;username&quot;$ git config --global user.email &quot;email&quot; 查看用户名和邮箱12$ git config user.name$ git config user.email]]></content>
