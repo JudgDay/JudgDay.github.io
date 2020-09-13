@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java,SpringBoot,国际化,i18n,">
 
 
 
@@ -81,17 +81,27 @@
 
 
 
-<meta name="description" content="wx：gj15611052153">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="SpringBoot后台国际化新建国际化资源文件在resources下面新建了三个文件  messages.properties是必须的，内容可以为空，但是必须有这个文件 messages_zh_CN.properties和messages_en_US.properties分别是中文和英文资源   配置国际化如果是从请求头中获取Local Message 123456789101112131415">
+<meta name="keywords" content="Java,SpringBoot,国际化,i18n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot后台国际化">
+<meta property="og:url" content="http://yoursite.com/2020/09/13/SpringBoot后台国际化/index.html">
 <meta property="og:site_name" content="GaoJian&#39;blog">
-<meta property="og:description" content="wx：gj15611052153">
+<meta property="og:description" content="SpringBoot后台国际化新建国际化资源文件在resources下面新建了三个文件  messages.properties是必须的，内容可以为空，但是必须有这个文件 messages_zh_CN.properties和messages_en_US.properties分别是中文和英文资源   配置国际化如果是从请求头中获取Local Message 123456789101112131415">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-21T09:16:02.000Z">
+<meta property="og:image" content="http://istuadmission.com/SpringBoot后台国际化/1.png">
+<meta property="og:image" content="http://istuadmission.com/SpringBoot后台国际化/2.png">
+<meta property="og:image" content="http://istuadmission.com/SpringBoot后台国际化/3.png">
+<meta property="og:image" content="http://istuadmission.com/SpringBoot后台国际化/4.png">
+<meta property="og:image" content="http://istuadmission.com/SpringBoot后台国际化/5.png">
+<meta property="og:image" content="http://istuadmission.com/SpringBoot后台国际化/6.png">
+<meta property="og:image" content="http://istuadmission.com/SpringBoot后台国际化/7.png">
+<meta property="og:image" content="http://istuadmission.com/SpringBoot后台国际化/8.png">
+<meta property="og:updated_time" content="2020-09-13T09:00:12.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="wx：gj15611052153">
+<meta name="twitter:title" content="SpringBoot后台国际化">
+<meta name="twitter:description" content="SpringBoot后台国际化新建国际化资源文件在resources下面新建了三个文件  messages.properties是必须的，内容可以为空，但是必须有这个文件 messages_zh_CN.properties和messages_en_US.properties分别是中文和英文资源   配置国际化如果是从请求头中获取Local Message 123456789101112131415">
+<meta name="twitter:image" content="http://istuadmission.com/SpringBoot后台国际化/1.png">
 
 
 
@@ -121,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2020/09/13/SpringBoot后台国际化/">
 
 
 
 
 
-  <title>tags | GaoJian'blog</title>
+  <title>SpringBoot后台国际化 | GaoJian'blog</title>
   
 
 
@@ -264,40 +274,232 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/13/SpringBoot后台国际化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Jian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://istuadmission.com/images/headicon.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GaoJian'blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 13 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tagss/Docker/" style="font-size: 12px; color: #ccc">Docker</a> <a href="/tagss/Git/" style="font-size: 12px; color: #ccc">Git</a> <a href="/tagss/Github/" style="font-size: 12px; color: #ccc">Github</a> <a href="/tagss/Hexo/" style="font-size: 30px; color: #111">Hexo</a> <a href="/tagss/JDK/" style="font-size: 12px; color: #ccc">JDK</a> <a href="/tagss/Jar/" style="font-size: 12px; color: #ccc">Jar</a> <a href="/tagss/Java/" style="font-size: 18px; color: #8e8e8e">Java</a> <a href="/tagss/MD5/" style="font-size: 12px; color: #ccc">MD5</a> <a href="/tagss/MySQL/" style="font-size: 12px; color: #ccc">MySQL</a> <a href="/tagss/Next/" style="font-size: 24px; color: #4f4f4f">Next</a> <a href="/tagss/SpringBoot/" style="font-size: 12px; color: #ccc">SpringBoot</a> <a href="/tagss/i18n/" style="font-size: 12px; color: #ccc">i18n</a> <a href="/tagss/国际化/" style="font-size: 12px; color: #ccc">国际化</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">SpringBoot后台国际化</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-13T16:02:57+08:00">
+                2020-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">小技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/09/13/SpringBoot后台国际化/" class="leancloud_visitors" data-flag-title="SpringBoot后台国际化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="SpringBoot后台国际化"><a href="#SpringBoot后台国际化" class="headerlink" title="SpringBoot后台国际化"></a>SpringBoot后台国际化</h1><h2 id="新建国际化资源文件"><a href="#新建国际化资源文件" class="headerlink" title="新建国际化资源文件"></a>新建国际化资源文件</h2><p>在resources下面新建了三个文件</p>
+<p><img src="http://istuadmission.com/SpringBoot后台国际化/1.png" alt="1"></p>
+<p>messages.properties是必须的，内容可以为空，但是必须有这个文件</p>
+<p>messages_zh_CN.properties和messages_en_US.properties分别是中文和英文资源</p>
+<p><img src="http://istuadmission.com/SpringBoot后台国际化/2.png" alt="2"></p>
+<p><img src="http://istuadmission.com/SpringBoot后台国际化/3.png" alt="3"></p>
+<h2 id="配置国际化"><a href="#配置国际化" class="headerlink" title="配置国际化"></a>配置国际化</h2><p>如果是从请求头中获取Local Message</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.LocaleResolver;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> java.util.Locale;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LocaleConfig</span> <span class="keyword">extends</span> <span class="title">AcceptHeaderLocaleResolver</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Locale <span class="title">resolveLocale</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">        String headerLang = request.getHeader(<span class="string">"language"</span>);</span><br><span class="line">        <span class="keyword">return</span> headerLang == <span class="keyword">null</span> || headerLang.isEmpty()</span><br><span class="line">                ? Locale.CHINESE</span><br><span class="line">                : <span class="keyword">new</span> Locale(headerLang);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> LocaleResolver <span class="title">localeResolver</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> LocaleConfig();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果是从HTTP请求中参数Local Message</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.LocaleResolver;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.InterceptorRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.i18n.LocaleChangeInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.i18n.SessionLocaleResolver;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Locale;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LocaleConfig</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 默认解析器 其中locale表示默认语言</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> LocaleResolver <span class="title">localeResolver</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        SessionLocaleResolver localeResolver = <span class="keyword">new</span> SessionLocaleResolver();</span><br><span class="line">        localeResolver.setDefaultLocale(Locale.CHINESE);</span><br><span class="line">        <span class="keyword">return</span> localeResolver;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 默认拦截器 其中lang表示切换语言的参数名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> WebMvcConfigurer <span class="title">localeInterceptor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> WebMvcConfigurer() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</span><br><span class="line">                LocaleChangeInterceptor localeInterceptor = <span class="keyword">new</span> LocaleChangeInterceptor();</span><br><span class="line">                localeInterceptor.setParamName(<span class="string">"lang"</span>);</span><br><span class="line">                registry.addInterceptor(localeInterceptor);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="编写工具类获取Local-Message"><a href="#编写工具类获取Local-Message" class="headerlink" title="编写工具类获取Local Message"></a>编写工具类获取Local Message</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.MessageSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.i18n.LocaleContextHolder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MessageUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MessageSource messageSource;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLocale</span><span class="params">(String msgCode)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> messageSource.getMessage(msgCode, <span class="keyword">null</span>, LocaleContextHolder.getLocale());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">return</span> msgCode;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在REST API中使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/TestController"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Resource</span></span><br><span class="line">	<span class="keyword">private</span> MessageUtils messageUtils;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@PostMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> messageUtils.getLocale(<span class="string">"test"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p><img src="http://istuadmission.com/SpringBoot后台国际化/4.png" alt="4"></p>
+<p><img src="http://istuadmission.com/SpringBoot后台国际化/5.png" alt="5"></p>
+<p>如果出现中文乱码的情况</p>
+<p><img src="http://istuadmission.com/SpringBoot后台国际化/6.png" alt="6"></p>
+<p>在Settings中将编码格式改成UTF-8</p>
+<p><img src="http://istuadmission.com/SpringBoot后台国际化/7.png" alt="7"></p>
+<p>然后将乱码的文字重新编写一下就好了</p>
+<p><img src="http://istuadmission.com/SpringBoot后台国际化/8.png" alt="8"></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果对您有帮助，可以打赏呦！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://istuadmission.com/images/wechatpay.png" alt="Gao Jian 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://istuadmission.com/images/alipay.jpg" alt="Gao Jian 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tagss/Java/" rel="tag"># Java</a>
+          
+            <a href="/tagss/SpringBoot/" rel="tag"># SpringBoot</a>
+          
+            <a href="/tagss/国际化/" rel="tag"># 国际化</a>
+          
+            <a href="/tagss/i18n/" rel="tag"># i18n</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/05/后台运行与停止jar包/" rel="next" title="后台运行与停止jar包">
+                <i class="fa fa-chevron-left"></i> 后台运行与停止jar包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -306,6 +508,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -326,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -412,6 +630,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot后台国际化"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot后台国际化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建国际化资源文件"><span class="nav-number">1.1.</span> <span class="nav-text">新建国际化资源文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置国际化"><span class="nav-number">1.2.</span> <span class="nav-text">配置国际化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写工具类获取Local-Message"><span class="nav-number">1.3.</span> <span class="nav-text">编写工具类获取Local Message</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.4.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">1.5.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
