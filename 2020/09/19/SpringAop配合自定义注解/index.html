@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="GaoJian&#39;blog">
 <meta property="og:description" content="SpringAop配合自定义注解什么是AOPAOP全称Aspect Oriented Programming，也就是面向切面编程。AOP主要实现的是针对业务处理过程中的切面进行提取，能够让我们在不影响原有业务功能的前提下，横切扩展新的功能。它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。 AOP相关术语要理解Spring Boot整合AOP的实现，就必须先对面">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-09-20T10:55:46.419Z">
+<meta property="og:updated_time" content="2020-09-20T11:05:54.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringAop配合自定义注解">
 <meta name="twitter:description" content="SpringAop配合自定义注解什么是AOPAOP全称Aspect Oriented Programming，也就是面向切面编程。AOP主要实现的是针对业务处理过程中的切面进行提取，能够让我们在不影响原有业务功能的前提下，横切扩展新的功能。它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。 AOP相关术语要理解Spring Boot整合AOP的实现，就必须先对面">
@@ -378,7 +378,7 @@
 
       
         <h1 id="SpringAop配合自定义注解"><a href="#SpringAop配合自定义注解" class="headerlink" title="SpringAop配合自定义注解"></a>SpringAop配合自定义注解</h1><h2 id="什么是AOP"><a href="#什么是AOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h2><p>AOP全称Aspect Oriented Programming，也就是面向切面编程。AOP主要实现的是针对业务处理过程中的切面进行提取，能够让我们在不影响原有业务功能的前提下，<strong>横切</strong>扩展新的功能。它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间<strong>低耦合性</strong>的隔离效果。</p>
-<h2 id="AOP相关术语"><a href="#AOP相关术语" class="headerlink" title="AOP相关术语"></a>AOP相关术语</h2><p>要理解Spring Boot整合AOP的实现，就必须先对面向切面实现的一些AOP的术语有所了解。在Spring的AOP中有很多的术语，而且容易混淆，大家一定要先搞清楚这几个概念：</p>
+<h2 id="AOP相关术语"><a href="#AOP相关术语" class="headerlink" title="AOP相关术语"></a>AOP相关术语</h2><p>要理解Spring Boot整合AOP的实现，就必须先对面向切面实现的一些AOP术语有所了解。在Spring的AOP中有很多的术语，而且容易混淆，大家一定要先搞清楚这几个概念：</p>
 <ul>
 <li><p><strong>切面（Aspect）</strong>：一个关注点的模块化，由切点和通知组成。以注解@Aspect的形式放在类上方，用来声明切面。</p>
 </li>
@@ -386,7 +386,7 @@
 </li>
 <li><p><strong>切点（Pointcut）</strong>：切点就是你所切取的类中的方法，比如你横切的这个类中有两个方法，那么这两个方法都是连接点，对这两个方法的定位就称之为切点。以注解@Pointcut的形式，使用条件表达式定义切点。</p>
 </li>
-<li><p><strong>通知（Advice）</strong>：需要完成的工作叫做通知，就是你写的业务逻辑中需要比如事务、日志等先定义好，然后需要的地方再去用。</p>
+<li><p><strong>通知（Advice）</strong>：需要完成的工作叫做通知，比如业务逻辑中的事务、日志等先定义好，然后在需要的地方去用。</p>
 <p>主要包括5个注解：Before、After、AfterReturning、AfterThrowing、Around</p>
 <ul>
 <li><p><strong>@Before</strong>：前置增强，在切点方法之前执行。</p>
