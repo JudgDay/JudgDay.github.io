@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="GaoJian&#39;blog">
 <meta property="og:description" content="SpringAop配合自定义注解什么是AOPAOP全称Aspect Oriented Programming，也就是面向切面编程。AOP主要实现的是针对业务处理过程中的切面进行提取，能够让我们在不影响原有业务功能的前提下，横切扩展新的功能。它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。 AOP相关术语要理解Spring Boot整合AOP的实现，就必须先对面">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-09-20T11:12:00.448Z">
+<meta property="og:updated_time" content="2020-09-20T11:27:20.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringAop配合自定义注解">
 <meta name="twitter:description" content="SpringAop配合自定义注解什么是AOPAOP全称Aspect Oriented Programming，也就是面向切面编程。AOP主要实现的是针对业务处理过程中的切面进行提取，能够让我们在不影响原有业务功能的前提下，横切扩展新的功能。它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。 AOP相关术语要理解Spring Boot整合AOP的实现，就必须先对面">
@@ -390,11 +390,10 @@
 <p>主要包括5个注解：Before、After、AfterReturning、AfterThrowing、Around。</p>
 <ul>
 <li><strong>@Before</strong>：前置增强，在切点方法之前执行。</li>
-</ul>
-</li>
 <li><p><strong>@After</strong>：最终增强，在切点方法之后执行。</p>
-<ul>
-<li><strong>@AfterReturning</strong>：后置增强，在切点方法退出时执行。</li>
+</li>
+<li><p><strong>@AfterReturning</strong>：后置增强，在切点方法退出时执行。</p>
+</li>
 <li><strong>@AfterThrowing</strong>：在切点方法抛出异常时执行。</li>
 <li><strong>@Around</strong>：环绕增强，能控制切点执行前，执行后，用这个注解后，程序抛异常，会影响@AfterThrowing这个注解。</li>
 </ul>
@@ -408,7 +407,7 @@
 <li><p><strong>代理（Proxy）</strong>：一个类被AOP织入通知后，就会产生一个结果类，他是融合了原类和通知逻辑的代理类。</p>
 </li>
 </ul>
-<h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>在反射中获取注解，以取得注解修饰的类、方法或属性的相关解释。</p>
 <h3 id="注解代码"><a href="#注解代码" class="headerlink" title="注解代码"></a>注解代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.istuadmission.common.annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target</span>(value = &#123;ElementType.TYPE, ElementType.METHOD&#125;)<span class="comment">//使用位置（类，方法）</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)<span class="comment">//加载到jvm里运行</span></span><br><span class="line"><span class="meta">@Documented</span><span class="comment">//文档化</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Log &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;<span class="comment">//注解的属性，如果只有一个属性，一般叫value，默认值""，可以不写</span></span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> "验证名称"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="使用注解"><a href="#使用注解" class="headerlink" title="使用注解"></a>使用注解</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Log</span>(value = <span class="string">"vale"</span>, name = <span class="string">"name"</span>) <span class="comment">//与其它注解一样的使用</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/add"</span>, method = RequestMethod.POST)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"test"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
