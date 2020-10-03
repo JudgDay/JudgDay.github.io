@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-20T11:36:23.382Z</updated>
+  <updated>2020-10-03T14:23:20.975Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL存储emoji表情</title>
+    <link href="http://yoursite.com/2020/10/03/MySQL%E5%AD%98%E5%82%A8emoji%E8%A1%A8%E6%83%85/"/>
+    <id>http://yoursite.com/2020/10/03/MySQL存储emoji表情/</id>
+    <published>2020-10-03T14:13:47.000Z</published>
+    <updated>2020-10-03T14:23:20.975Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL存储emoji表情"><a href="#MySQL存储emoji表情" class="headerlink" title="MySQL存储emoji表情"></a>MySQL存储emoji表情</h1><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>在使用字符集是UTF-8的mysql数据库存储emoji表情的时候，会抛出异常（如微信开发获取用户昵称，有的用户的昵称是emoji的图像）</p><h2 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">java.sql.SQLException: Incorrect string value: <span class="string">'\xF0\x9F\x92\x94'</span> <span class="keyword">for</span> colum n <span class="string">'name'</span> at row <span class="number">1</span> </span><br><span class="line">at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:<span class="number">1073</span>) </span><br><span class="line">at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:<span class="number">3593</span>) </span><br><span class="line">at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:<span class="number">3525</span>) </span><br><span class="line">at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:<span class="number">1986</span>) </span><br><span class="line">at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:<span class="number">2140</span>) </span><br><span class="line">at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:<span class="number">2620</span>) </span><br><span class="line">at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:<span class="number">1662</span>) </span><br><span class="line">at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:<span class="number">1581</span>)</span><br></pre></td></tr></table></figure><h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>emoji表情是1个字符占4个字节，而utf8编码只支持1-3个字节的字符，所以utf8编码下，如果直接存储表情，数据库存储会失败</p><h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><p>修改table的字符集</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br></pre></td></tr></table></figure><p>utf8mb4完全向后兼容utf8，无乱码或其他数据丢失的形式出现。理论上是可以放心修改，如果您不放心修改，您可以拿备份恢复数据</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;MySQL存储emoji表情&quot;&gt;&lt;a href=&quot;#MySQL存储emoji表情&quot; class=&quot;headerlink&quot; title=&quot;MySQL存储emoji表情&quot;&gt;&lt;/a&gt;MySQL存储emoji表情&lt;/h1&gt;&lt;h2 id=&quot;Background&quot;&gt;&lt;a hr
+      
+    
+    </summary>
+    
+      <category term="小技巧" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="MySQL" scheme="http://yoursite.com/tagss/MySQL/"/>
+    
+      <category term="emoji" scheme="http://yoursite.com/tagss/emoji/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>调用List的方法抛出UnsupportedOperationException</title>
+    <link href="http://yoursite.com/2020/10/03/%E8%B0%83%E7%94%A8List%E7%9A%84%E6%96%B9%E6%B3%95%E6%8A%9B%E5%87%BAUnsupportedOperationException/"/>
+    <id>http://yoursite.com/2020/10/03/调用List的方法抛出UnsupportedOperationException/</id>
+    <published>2020-10-03T13:48:06.000Z</published>
+    <updated>2020-10-03T14:02:36.396Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="调用List的方法抛出UnsupportedOperationException"><a href="#调用List的方法抛出UnsupportedOperationException" class="headerlink" title="调用List的方法抛出UnsupportedOperationException"></a>调用List的方法抛出UnsupportedOperationException</h1><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>使用Arrays.asList方法将数组转化成List集合后调用List的方法抛出UnsupportedOperationException异常。</p><h2 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java.lang.UnsupportedOperationException</span><br><span class="line">at java.util.AbstractList.remove(AbstractList.java:<span class="number">161</span>)</span><br><span class="line">at java.util.AbstractList$Itr.remove(AbstractList.java:<span class="number">374</span>)</span><br><span class="line">at java.util.AbstractCollection.remove(AbstractCollection.java:<span class="number">293</span>)</span><br><span class="line">at com.synnex.order.search.service.dao.DemoTest.test7(DemoTest.java:<span class="number">140</span>)</span><br></pre></td></tr></table></figure><h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>Arrays.asList方法重新new了一个ArrayList, 但是这个ArrayList不是来自于util包下面的ArrayList， 而是Arrays类里面的内部静态类。这个内部静态类继承AbstractList, 但是没有重写add() , remove()等方法， 所以在调用add(). remove()等方法的时候，实际调用的是AbstractList类的add()和remove()的方法，因此会抛出异常。</p><h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String[] testArr = &#123;<span class="string">"Tom"</span>,<span class="string">"Jerry"</span>,<span class="string">"Dave"</span>&#125;;</span><br><span class="line">List&lt;String&gt; stringList = <span class="keyword">new</span> ArrayList&lt;String&gt;(Arrays.asList(testArr));</span><br><span class="line">stringList.remove(<span class="string">"Tom"</span>);</span><br><span class="line">System.out.println(stringList);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;调用List的方法抛出UnsupportedOperationException&quot;&gt;&lt;a href=&quot;#调用List的方法抛出UnsupportedOperationException&quot; class=&quot;headerlink&quot; title=&quot;调用List的方法抛出U
+      
+    
+    </summary>
+    
+      <category term="小技巧" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tagss/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringAop配合自定义注解</title>
