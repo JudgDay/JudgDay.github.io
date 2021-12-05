@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo绑定域名]]></title>
+    <url>%2F2021%2F12%2F05%2FHexo%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%2F</url>
+    <content type="text"><![CDATA[Hexo绑定域名查询Hexo博客Github Pages域名的IP在终端或者命令行中输入以下命令 1ping yourname.github.io 就可以获取到Github Pages域名的IP 域名解析打开阿里云控制台，点击左侧菜单中的域名 进入域名管理页面，可以看到之前购买的域名在列表里，点击解析 进入解析页面，点击添加记录 在域名解析设置里添加两条记录 主机记录就是域名的前缀，常见的用法有 主机记录 描述 www 解析后的域名为www.aliyun.com @ 直接解析主域名 aliyun.com * 泛解析，匹配其他所有域名 *.aliyun.com mail 将域名解析为mail.aliyun.com，通常用于解析邮箱服务器 二级域名 如：abc.aliyun.com，填写abc 手机网站 如：m.aliyun.com，填写m 显性URL 不支持泛解析（泛解析：将所有子域名解析到同一地址） 新建CNAME文件进入本地hexo中source目录下，新建名为CNAME的文件，不要任何后缀，在文件中输入 1zmjwdzjl.com 可以填写www.zmjwdzjl.com 和 zmjwdzjl.com 两种访问方式，但如果填写 www.zmjwdzjl.com 则只支持 www.zmjwdzjl.com 一种访问方式，如果是中文域名的话，则需先将中文域名转换为Punycode标准编码的字符串，再填入CNAME文件即可 然后在Hexo项目目录下执行以下命令重新部署hexo 123hexo cleanhexo ghexo d Github Pages设置前往Github，找到Hexo项目仓库，点击Setting，往下拉找到Github Pages相关设置，在Custom domain中填入之前注册的域名，点击Save，等十分钟左右，让解析生效，就可以根据域名访问Hexo了]]></content>
+      <categories>
+        <category>搭建教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[POI单元格格式设置]]></title>
+    <url>%2F2021%2F11%2F28%2FPOI%E5%8D%95%E5%85%83%E6%A0%BC%E6%A0%BC%E5%BC%8F%E8%AE%BE%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[POI单元格格式设置初始化操作12345678//获取工作簿对象Workbook workbook = new XSSFWorkbook();//获取表格对象Sheet sheet = workbook.createSheet("sheet")//获取单元格样式对象CellStyle cellStyle = worbook.createCellStyle();//获取单元格字体对象Font font = worbook.createFont(); 设置居中对齐12345678910//设置水平对齐的样式为居中对齐; cellStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);//设置垂直对齐的样式为居中对齐; cellStyle.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);//POI 3.17的写法//设置水平对齐的样式为居中对齐; cellStyle.setAlignment(HorizontalAlignment.CENTER);//设置垂直对齐的样式为居中对齐; cellStyle.setVerticalAlignment(VerticalAlignment.CENTER); 设置背景色12cellStyle.setFillForegroundColor(IndexedColors.PALE_BLUE.getIndex());cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND); 设置边框12345678//设置上边框cellStyle.setBorderTop(BorderStyle.THIN);//设置下边框cellStyle.setBorderBottom(BorderStyle.THIN);//设置左边框cellStyle.setBorderLeft(BorderStyle.THIN);//设置右边框cellStyle.setBorderRight(BorderStyle.THIN); 设置字体12font.setFontName("宋体");cellStyle.setFont(font); 字体加粗12font.setBold(true);cellStyle.setFont(font); 合并单元格123456789101112//CellRangeAddress构造方法四个参数为：初始行、截止行、初始列、截止列CellRangeAddress region = new CellRangeAddress(0,0,0,0);sheet.addMergedRegion(region);//合并单元格后边框不会自动合并，需要额外操作setRegionBorder(BorderStyle.THIN,region,sheet);public static void setRegionBorder(BorderStyle border,CellRangeAddress region,Sheet sheet) &#123; RegionUtil.setBorderTop(border,region,sheet); RegionUtil.setBorderBottom(border,region,sheet); RegionUtil.setBorderLeft(border,region,sheet); RegionUtil.setBorderRight(border,region,sheet);&#125;]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>POI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SpringBoot实现文件上传下载]]></title>
+    <url>%2F2021%2F11%2F03%2FSpringBoot%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%2F</url>
+    <content type="text"><![CDATA[SpringBoot实现文件上传下载配置在application.yml中添加配置 123456789101112spring: servlet: multipart: enabled: true # 表示是否开启文件上传支持，默认为 true file-size-threshold: 0 # 表示文件写入磁盘的阀值，默认为 0 location: # 表示上传文件的临时保存位置 max-file-size: 1MB # 表示上传的单个文件的最大大小，默认为 1MB max-request-size: 10MB # 表示多文件上传时文件的总大小，默认为 10MBfile: upload: url: E:/test # 上传路径 SpringBoot更改了不同版本的属性名称 SpringBoot 1.3.x及更早 1multipart.max-file-size SpringBoot 1.3.x之后 1spring.http.multipart.max-file-size SpringBoot 2.0之后 1spring.servlet.multipart.max-file-size 文件上传1234567891011121314151617181920212223242526272829303132333435363738394041package com.zmjwdzjl.controller;import org.springframework.web.bind.annotation.*;import org.springframework.web.multipart.MultipartFile;import javax.servlet.http.HttpServletResponse;import java.io.*;@RestController@RequestMapping("file")@Slf4jpublic class FileController &#123; @Value("$&#123;file.upload.url&#125;") private String uploadFilePath; @PostMapping("/upload") public String httpUpload(@RequestParam("files") MultipartFile files[]) &#123; JSONObject object = new JSONObject(); for(int i=0;i&lt;files.length;i++) &#123; // getOriginalFilename方法获取文件名(带后缀)，getName方法获取文件名(不带后缀) String fileName = files[i].getOriginalFilename(); File dest = new File(uploadFilePath +'/'+ fileName); // 判断文件所在目录是否存在，如果不存在就创建对应的目录 if (!dest.getParentFile().exists()) &#123; dest.getParentFile().mkdirs(); &#125; try &#123; // 将文件存放到对应的目录下，如果上传重复的文件不会报错，后上传的文件会覆盖已上传的文件 files[i].transferTo(dest); &#125; catch (Exception e) &#123; log.error("&#123;&#125;",e); object.put("success",2); object.put("result","程序错误，请重新上传"); return object.toString(); &#125; &#125; object.put("success",1); object.put("result","文件上传成功"); return object.toString(); &#125;&#125; 文件下载12345678910111213141516171819202122232425@RequestMapping("/download")public String fileDownLoad(HttpServletResponse response, @RequestParam("fileName") String fileName) &#123; File file = new File(uploadFilePath +'/'+ fileName); if(!file.exists()) &#123; return "下载文件不存在"; &#125; response.reset(); response.setContentType("application/octet-stream"); response.setCharacterEncoding("utf-8"); response.setContentLength((int) file.length()); response.setHeader("Content-Disposition", "attachment;filename=" + fileName ); try(BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file))) &#123; byte[] buff = new byte[1024]; OutputStream os = response.getOutputStream(); int i = 0; while ((i = bis.read(buff)) != -1) &#123; os.write(buff, 0, i); os.flush(); &#125; &#125; catch (IOException e) &#123; log.error("&#123;&#125;",e); return "下载失败"; &#125; return "下载成功";&#125;]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MyBatis使用Map参数]]></title>
+    <url>%2F2021%2F11%2F02%2FMyBatis%E4%BD%BF%E7%94%A8Map%E5%8F%82%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[MyBatis使用Map参数方法一如果传入的map有注解@Param(“params”)，则key集合可以写成params.keys，value集合可以写成params.values。 123public interface TestMapper &#123; List&lt;String&gt; getList(@Param("params") Map&lt;String, String&gt; params);&#125; 123456789101112131415&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt; &lt;mapper namespace=“com.zmjwdzjl.mapper.TestMapper”&gt; &lt;select id="getList" restultType="String" parameterType="java.util.Map"&gt; select id from user &lt;where&gt; &lt;foreach collection="params.keys" item="key" separator="and"&gt; $&#123;key&#125; = #&#123;params.$&#123;key&#125;&#125; -- 或者另一种写法 $&#123;key&#125; = #&#123;params[$&#123;key&#125;]&#125; &lt;/foreach&gt; &lt;/where&gt; &lt;/select&gt;&lt;/mapper&gt; 但是这两种方式map中的key只能是String类型，如果是其他类型，得到的value是null。#{params[${key}]}还可以写成${params[key]}。 方法二如果传入的map的key要适用所有类型，可以遍历Map中的entrySet。 123public interface TestMapper &#123; List&lt;String&gt; getList(@Param("params") Map&lt;Long, String&gt; params);&#125; 1234567891011121314&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt; &lt;mapper namespace=“com.zmjwdzjl.mapper.TestMapper”&gt; &lt;select id="getList" restultType="String" parameterType="java.util.Map"&gt; select id from user &lt;where&gt; &lt;foreach collection="params.entrySet()" item="value" index="key" separator="or"&gt; id = #&#123;key&#125; and user_name= #&#123;value&#125; &lt;/foreach&gt; &lt;/where&gt; &lt;/select&gt;&lt;/mapper&gt;]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>MyBatis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Stream为集合添加序号]]></title>
     <url>%2F2021%2F08%2F06%2FStream%E4%B8%BA%E9%9B%86%E5%90%88%E6%B7%BB%E5%8A%A0%E5%BA%8F%E5%8F%B7%2F</url>
     <content type="text"><![CDATA[Stream为集合添加序号1234567891011121314151617181920212223242526272829303132public class Test &#123; public static void main(String[] args) &#123; List&lt;User&gt; userList = new ArrayList&lt;&gt;(); User u1 = new User(); u1.setUserName("张三"); u1.setPassWord("zhangsan123"); userList.add(u1); User u2 = new User(); u2.setUserName("李四"); u2.setPassWord("lisi123"); userList.add(u2); User u3 = new User(); u3.setUserName("王五"); u3.setPassWord("wangwu123"); userList.add(u3); //遍历添加序号 list.forEach(v -&gt; v.setIndex(list.indexOf(v)+1)); &#125;&#125; @Datapublic class User &#123; private Integer index; private String userName; private String passWord;&#125;]]></content>
@@ -98,7 +142,7 @@
         <category>小技巧</category>
       </categories>
       <tags>
-        <tag>Spring Boot</tag>
+        <tag>SpringBoot</tag>
         <tag>Aop</tag>
       </tags>
   </entry>
