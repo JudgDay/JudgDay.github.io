@@ -1,6 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SpringBoot汉字转拼音]]></title>
+    <url>%2F2023%2F07%2F30%2FSpringBoot%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3%2F</url>
+    <content type="text"><![CDATA[SpringBoot汉字转拼音引入依赖12345&lt;dependency&gt; &lt;groupId&gt;com.hankcs&lt;/groupId&gt; &lt;artifactId&gt;hanlp&lt;/artifactId&gt; &lt;version&gt;portable-1.8.3&lt;/version&gt;&lt;/dependency&gt; 汉字转拼音123456import org.apache.commons.collections4.ListUtils;public static void main(String[] args) &#123; List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin("重庆"); ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getPinyinWithoutTone()));&#125; 汉字首字母123456import org.apache.commons.collections4.ListUtils;public static void main(String[] args) &#123; List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin("重庆"); ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getFirstChar()));&#125; 汉字符号音调123456import org.apache.commons.collections4.ListUtils;public static void main(String[] args) &#123; List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin("重庆"); ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getPinyinWithToneMark()));&#125; 汉字数字音调123456import org.apache.commons.collections4.ListUtils;public static void main(String[] args) &#123; List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin("重庆"); ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v));&#125; 汉字声母123456import org.apache.commons.collections4.ListUtils;public static void main(String[] args) &#123; List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin("重庆"); ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getShengmu()));&#125; 汉字音调123456import org.apache.commons.collections4.ListUtils;public static void main(String[] args) &#123; List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin("重庆"); ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getTone()));&#125;]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HTTP 413错误解决方法]]></title>
+    <url>%2F2023%2F07%2F30%2FHTTP-413%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[HTTP 413错误解决方法原因由于上传文件过大引起的，排查服务器是否有使用nginx做反向代理 解决方法修改nginx配置文件，调整客户端请求大小和缓存大小 12345http &#123; client_max_body_size 10M; client_body_buffer_size 128k; fastcgi_intercept_errors on;&#125; client_max_body_size: 客户端请求服务器最大允许大小，默认1M。如果请求的正文数据大于client_max_body_size，HTTP协议会报413 Request Entity Too Large。 client_body_buffer_size: nginx分配给请求数据的Buffer大小，如果请求的数据小于client_body_buffer_size则将数据先在内存中存储。如果请求的值大于client_body_buffer_size小于client_max_body_size，就会将数据先存储到临时文件中。 client_body_temp: 临时文件存储位置，默认/tmp/。配置的client_body_temp地址，一定让执行的Nginx的用户组有读写权限。否则，当传输的数据大于client_body_buffer_size，写进临时文件失败会报错。 120648 open() "/usr/local/openresty-1.9.7.5/nginx/client_body_temp/0000000019" failed (13: Permission denied)]]></content>
+      <categories>
+        <category>开发问题</category>
+      </categories>
+      <tags>
+        <tag>HTTP Status Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux之find命令]]></title>
+    <url>%2F2023%2F07%2F30%2FLinux%E4%B9%8Bfind%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Linux之find命令find 命令用于在指定的目录下搜索文件和目录。可支持根据文件名、文件类型、文件大小、修改时间等条件进行筛选。 基本语法1find 目录路径 [选项参数] [搜索条件] 目录路径：指定要查找的目录路径。 选项参数：用于指定匹配条件，例如文件名、类型。 搜索条件：用于指定要搜索的文件和目录，满足这个条件的就会被搜索出来。 选项参数-name按文件名进行匹配 12# 搜索后缀为txt的文件find / -name "*.txt" -type按文件类型进行匹配 d: 目录、f: 文件、l: 符号链接（软链接） 12# 搜索文件类型为目录的文件find / -type d -size按文件大小进行匹配 + : 大于、- ：小于 单位: c（字节）、w（字数）、b（块数）、k（KB）、M（MB）、 G（GB） 12# 搜索大于100KB的文件find / -size +100c -user按文件所属用户进行匹配。 12# 搜索属于root用户的文件find / -user root -mtime按文件最后内容的修改时间进行匹配 + : 几天之内、- : 几天之前 单位: 天 12# 搜索修改日期为7天前的文件find / -mtime -7 -perm按文件权限进行匹配 /u: 当前用户、/g: 组权限、/o: 其他用户权限、/a: 所有用户权限 + : 具有、- : 不具有 r: 读权限、w: 写权限、x: 执行权限 12# 查找具有读写权限的文件find / -perm /u+rw -exec对搜索的结果执行命令 12# 将后缀为txt的文件删除find / -name "*.txt" -exec rm &#123;&#125; \; {}为占位符，将搜索的结果放到这里 -exec 参数需要使用 \; 作为命令的结尾]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SpringBoot事务回滚]]></title>
+    <url>%2F2023%2F07%2F30%2FSpringBoot%E4%BA%8B%E5%8A%A1%E5%9B%9E%E6%BB%9A%2F</url>
+    <content type="text"><![CDATA[SpringBoot事务回滚在开发过程中有时会遇到，多次操作数据时，某次操作出现问题导致程序终止，但是之前的数据已经操作，需要回滚使数据复原。基于这种情况，SpringBoot提供了一个注解@Transactional，帮助回滚事务。 原理在应用系统调用声明了@Transactional的目标方法时，Spring Framework 默认使用AOP代理，在代码运行时生成一个代理对象，根据@Transactional的属性配置信息，这个代理对象决定该声明 @Transactional 的目标方法是否由拦截器TransactionInterceptor来使用拦截，在TransactionInterceptor拦截时，会在目标方法开始执行之前创建并加入事务，并执行目标方法的逻辑，最后根据执行情况是否出现异常，利用抽象事务管理器AbstractPlatformTransactionManager操作数据源DataSource提交或回滚事务。 开启事务启动类加上@EnableTransactionManagement注解，开启事务支持。 SpringBoot默认开启事务，直接在接口、类、方法上使用@Transactional注解即可。 自动回滚1234567@Override@Transactionalpublic void submit() &#123; success(); //假如error()会抛出异常，则success()对数据库的操作会回滚。 error();&#125; 手动回滚1234567891011121314@Override@Transactional(rollbackFor = Exception.class)public String submit()&#123; success(); try &#123; exception(); &#125; catch (Exception e) &#123; e.printStackTrace(); // 手动回滚事务 TransactionAspectSupport.currentTransactionStatus().setRollbackOnly(); return "error"; &#125; return "success";&#125; 部分回滚12345678910111213141516@Override@Transactional(rollbackFor = Exception.class)public String submit()&#123; success(); //只回滚以下异常 Object savePoint = TransactionAspectSupport.currentTransactionStatus().createSavepoint(); try &#123; exception(); &#125; catch (Exception e) &#123; e.printStackTrace(); // 手动回滚事务 TransactionAspectSupport.currentTransactionStatus().rollbackToSavepoint(savePoint); return ApiReturnUtil.error(); &#125; return ApiReturnUtil.success();&#125; @Transactional参数 参数名称 描述 readOnly 用于设置当前事务是否为只读事务。true表示只读，false则表示可读写，默认为false。例如：@Transactional(readOnly=true) rollbackFor 用于设置需要进行回滚的异常类数组，当方法中抛出指定异常数组中的异常时，则进行事务回滚。默认为非检测性异常unchecked exceptions(RuntimeException和Error)。例如：指定单一异常类：@Transactional(rollbackFor=RuntimeException.class)指定多个异常类：@Transactional(rollbackFor={RuntimeException.class, Exception.class}) transactionManager / value 多个事务管理器托管在Spring容器中时，指定事务管理器的bean名称 rollbackForClassName 用于设置需要进行回滚的异常类名称数组，当方法中抛出指定异常名称数组中的异常时，则进行事务回滚。例如：指定单一异常类名称：@Transactional(rollbackForClassName=”RuntimeException”)指定多个异常类名称：@Transactional(rollbackForClassName={“RuntimeException”, “Exception”}) noRollbackFor 用于设置不需要进行回滚的异常类数组，当方法中抛出指定异常数组中的异常时，不进行事务回滚。例如：指定单一异常类：@Transactional(noRollbackFor=RuntimeException.class)指定多个异常类：@Transactional(noRollbackFor={RuntimeException.class, Exception.class}) noRollbackForClassName 用于设置不需要进行回滚的异常类名称数组，当方法中抛出指定异常名称数组中的异常时，不进行事务回滚。例如：指定单一异常类名称：@Transactional(noRollbackForClassName=”RuntimeException”)指定多个异常类名称：@Transactional(noRollbackForClassName={“RuntimeException”, “Exception”}) propagation 用于设置事务的传播行为。默认为REQUIRED。例如：@Transactional(propagation=Propagation.NOT_SUPPORTED, readOnly=true) isolation 用于设置底层数据库的事务隔离级别，事务隔离级别用于处理多事务并发的情况，通常使用数据库的默认隔离级别即可，基本不需要进行设置。 timeout 用于设置事务的超时秒数。单位为秒，-1表示永不超时，默认为-1。例如：@Transactional(timeout=30) @Propagation参数（事务的传播行为） 参数 描述 REQUIRED 默认的传播行为。如果有事务，则加入事务。没有事务，则新建事务 SUPPORTS 如果有事务，则加入事务。没有事务，则不用事务 MANDATORY 必须在一个已有的事务中执行。如果当前存在事务，则加入该事务，如果当前不存在事务，则抛出异常 REQUIRES_NEW 不管是否存在事务，都新建事务执行。如果已有事务，则挂起当前事务，再新建事务，新的执行完毕, 再执行老的事务 NOT_SUPPORTED 必须在一个没有的事务中执行，如果当前已有事务，则将当前事务挂起 NEVER 必须在一个没有的事务中执行，否则抛出异常IllegalTransactionStateException @isolation参数（事务的隔离级别） 参数 描述 DEFAULT 默认的隔离级别。使用数据库默认的事务隔离级别。MYSQL默认隔离级别为REPEATABLE_READ，Oracle 默认隔离级别为READ_COMMITTED，SQLSERVER默认隔离级别为READ_COMMITTED READ_UNCOMMITTED（读取未提交数据(） 最低的隔离级别。在事务完成前，其他事务可以看到该事务所修改的数据。而在其他事务提交前，该事务也可以看到其他事务所做的修改。可能导致脏读，幻读，不可重复读 READ_COMMITTED（读取已提交数据） 大多数数据库的默认级别。在事务完成前，其他事务无法看到该事务所修改的数据。在该事务提交后，你就可以查看其他事务插入或更新的数据。如果其他事务修改了数据，就会看到不同的数据。可防止脏读，但幻读和不可重复读仍可以发生 REPEATABLE_READ（可重复读） 比READ_COMMITTED更严格，该隔离级别确保如果在事务中查询了某个数据集，你至少还能再次查询到相同的数据集，即使其他事务修改了所查询的数据。然而如果其他事务插入了新数据，你就可以查询到该新插入的数据。可防止脏读，不可重复读，但幻读仍可能发生 SERIALIZABLE（串行化） 完全服从ACID的隔离级别，确保不发生脏读、不可重复读和幻影读。这在所有隔离级别中是最慢的，因为它通常是通过完全锁定当前事务所涉及的数据表来完成的。代价最大、可靠性最高的隔离级别。所有的事务都是按顺序一个接一个地执行。避免所有不安全读取 注意 @Transactional注解只能被应用到public方法上，对于其它的方法，标记了@Transactional注解也不会报错，但事务无法回滚。 外部调用的公共方法A未声明事务@Transactional，方法B若是其他类的方法且声明事务，则事务由子方法B控制。 外部调用的公共方法A未声明事务@Transactional，子方法B若是本类的方法，则无论子方法B是否声明事务，事务均不会生效。（可以使用applicationContext.getBean(service.class)直接从IOC容器中将类取出来，然后再调用方法B即可，这样就能用上Spring AOP生成的代理对象） 外部调用的公共方法A声明事务@Transactional，无论子方法B是不是本类的方法或者是否声明事务，事务均由公共方法A控制。 异常被try/catch捕获而没有被抛出，则事务无法回滚。 多线程下事务管理因为线程不属于spring托管，所以事物无法回滚。 数据库要支持事务，如果是mysql，要使用innodb引擎，myisam不支持事务。]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git Commit Message规范]]></title>
+    <url>%2F2023%2F07%2F30%2FGit-Commit-Message%E8%A7%84%E8%8C%83%2F</url>
+    <content type="text"><![CDATA[Git Commit Message规范格式12345&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;&lt;BLANK LINE&gt;&lt;body&gt;&lt;BLANK LINE&gt;&lt;footer&gt; 提交信息包含三个部分header(type、scope、subject)、body和footer，用空行分隔。每个部分不能超过100个字符。 header: 必填，且必须符合header格式。 body: 可填，详细描述提交的内容，可以分为多行。 footer: 可填，其他备注, 一般用于不兼容更新或关闭issue。 headerheader包括三个部分：type（必填）、scope（可填）和subject（必填）。 typetype: commit 类型，有业内常用的字段，也可以根据需要自己定义。 类型 描述 feat 增加新功能 fix 修复问题/BUG docs 文档/注释 style 代码风格相关无影响运行结果的 refactor 重构 test 测试相关 chore 构建过程或辅助工具的变动 scopescope: commit影响的范围, 比如某某组件、某某页面。 subjectsubject: 简短描述提交的内容。]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SpringBoot重试机制]]></title>
+    <url>%2F2023%2F07%2F30%2FSpringBoot%E9%87%8D%E8%AF%95%E6%9C%BA%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[SpringBoot重试机制spring系列的spring-retry是一个实用程序模块，可以帮助我们以标准方式处理任何特定操作的重试。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖1234&lt;dependency&gt; &lt;groupId&gt;org.springframework.retry&lt;/groupId&gt; &lt;artifactId&gt;spring-retry&lt;/artifactId&gt;&lt;/dependency&gt; 开启只有启用@EnabelRetry才行，写在配置类、启动类或services上都可以。 1234567import org.springframework.context.annotation.Configuration;import org.springframework.retry.annotation.EnableRetry;@Configuration@EnableRetrypublic class RetryConfig &#123;&#125; 使用123456789101112131415@Service@EnableRetrypublic class TestRetryServiceImpl implements TestRetryService &#123; @Override @Retryable(value = Exception.class,maxAttempts = 4,backoff = @Backoff(delay = 2000,multiplier = 1.5)) public int test(int code) throws Exception &#123; System.out.println("test开始" + LocalTime.now()); if (code == 0)&#123; throw new Exception("test"); &#125; System.out.println("test结束" + LocalTime.now()); return 200; &#125;&#125; @Retryable参数 参数 描述 value 指定重试的异常，默认为空。include的同义词，如果excludes也为空，则重试所有异常 include 指定重试的异常，默认为空 exclude 指定不重试的异常，默认为空 maxAttempts 最大重试次数，默认3次 backoff 重试等待策略，默认使用@Backoff @Backoff参数 参数 描述 value 重试间隔时间，单位毫秒，默认1000 multiplier 重试间隔时间倍数，默认为0。若value为2，multiplier为1.5，则第一次重试为2秒，第二次为3秒，第三次为4.5秒 回调当重试耗尽后，RetryOperations可以将控制传递给一个回调方法，即RecoveryCallback。spring-retry还提供了@Recover注解，用于@Retryable重试失败后回调。如果不需要回调方法，可以不写回调方法，重试耗尽后，如果还没成功符合业务判断，则抛出异常。 12345@Recoverpublic int recover(Exception e, int code) &#123; System.out.println("回调方法执行！！！！"); return 400;&#125; 注意 回调方法与重试方法需写在同一个实现类里。 回调方法的返回值必须与重试方法一致。 方法内不能使用try catch，只能往外抛异常 由于spring-retry用到了aspect增强，所以在方法内部调用重试方法会失效。]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker修改RabbitMQ密码]]></title>
+    <url>%2F2023%2F07%2F30%2FDocker%E4%BF%AE%E6%94%B9RabbitMQ%E5%AF%86%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[Docker修改RabbitMQ密码1234# 进入rabbitmq的容器docker exec -it 容器ID bash# 修改rabbitmq密码rabbitmqctl change_password 账户 '密码']]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>RabbitMQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac切换JDK版本]]></title>
+    <url>%2F2023%2F07%2F30%2FMac%E5%88%87%E6%8D%A2JDK%E7%89%88%E6%9C%AC%2F</url>
+    <content type="text"><![CDATA[Mac切换JDK版本首先安装各个版本的jdk，安装教程略过，三个版本最终安装目录如下，版本号根据情况略有不同 123JDK1.6: /Library/Java/JavaVirtualMachines/1.6.0.jdkJDK1.8: /Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdkJDK20: /Library/Java/JavaVirtualMachines/jdk-20.jdk 安装jdk后，编辑bash_profile 1vim ~/.bash_profile 添加如下内容 1234567891011export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`export JAVA_20_HOME=`/usr/libexec/java_home -v 20`#默认设为JDK1.8export JAVA_HOME=$JAVA_8_HOME#alias命令动态切换JDK版本alias jdk6="export JAVA_HOME=$JAVA_6_HOME"alias jdk8="export JAVA_HOME=$JAVA_8_HOME"alias jdk20="export JAVA_HOME=$JAVA_20_HOME" 执行生效命令 1source ~/.bash_profile 之后只需在终端中输入alias命令就可以切换jdk版本]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac重启后环境变量失效问题]]></title>
+    <url>%2F2023%2F07%2F30%2FMac%E9%87%8D%E5%90%AF%E5%90%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Mac重启后环境变量失效问题1234# 编辑.zshrc文件vim ~/.zshrc# 在文件末尾加入生效配置文件命令，保存后重启source ~/.bash_profile]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker设置Redis密码]]></title>
+    <url>%2F2023%2F07%2F30%2FDocker%E8%AE%BE%E7%BD%AERedis%E5%AF%86%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[Docker设置Redis密码12345678910# 进入redis的容器docker exec -it 容器ID bash# 进入redis目录cd /usr/local/bin# 运行命令redis-cli# 查看现有的redis密码config get requirepass# 设置redis密码config set requirepass 密码]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker查看容器IP]]></title>
     <url>%2F2023%2F01%2F26%2FDocker%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8IP%2F</url>
     <content type="text"><![CDATA[Docker查看容器IP1docker inspect 容器ID IPAddress就是容器IP]]></content>
@@ -97,7 +209,7 @@
         <category>小技巧</category>
       </categories>
       <tags>
-        <tag>Spring</tag>
+        <tag>SpringBoot</tag>
       </tags>
   </entry>
   <entry>

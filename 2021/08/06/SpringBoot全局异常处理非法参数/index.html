@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Spring,">
+  <meta name="keywords" content="SpringBoot,">
 
 
 
@@ -82,14 +82,14 @@
 
 
 <meta name="description" content="Spring Boot全局异常处理非法参数应用场景在一个项目中我们需要对接口中传入的参数进行非法性检查，当参数非法时，抛出异常，然后返回统一的错误信息。 校验注解Bean Validation中内置的校验注解:   Constraint 描述     @Null 被注解的元素必须为null   @NotNull 被注解的元素必须不为null   @AssertTrue 被注解的元素必须为true">
-<meta name="keywords" content="Spring">
+<meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Boot全局异常处理非法参数">
 <meta property="og:url" content="http://zmjwdzjl.com/2021/08/06/SpringBoot全局异常处理非法参数/index.html">
 <meta property="og:site_name" content="GaoJian&#39;blog">
 <meta property="og:description" content="Spring Boot全局异常处理非法参数应用场景在一个项目中我们需要对接口中传入的参数进行非法性检查，当参数非法时，抛出异常，然后返回统一的错误信息。 校验注解Bean Validation中内置的校验注解:   Constraint 描述     @Null 被注解的元素必须为null   @NotNull 被注解的元素必须不为null   @AssertTrue 被注解的元素必须为true">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-12-06T06:18:43.935Z">
+<meta property="og:updated_time" content="2023-07-30T15:28:44.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Boot全局异常处理非法参数">
 <meta name="twitter:description" content="Spring Boot全局异常处理非法参数应用场景在一个项目中我们需要对接口中传入的参数进行非法性检查，当参数非法时，抛出异常，然后返回统一的错误信息。 校验注解Bean Validation中内置的校验注解:   Constraint 描述     @Null 被注解的元素必须为null   @NotNull 被注解的元素必须不为null   @AssertTrue 被注解的元素必须为true">
@@ -346,17 +346,6 @@
 
           
           
-             <span id="/2021/08/06/SpringBoot全局异常处理非法参数/" class="leancloud_visitors" data-flag-title="Spring Boot全局异常处理非法参数">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
 
           
 
@@ -523,7 +512,7 @@
       
         <div class="post-tags">
           
-            <a href="/tagss/Spring/" rel="tag"># Spring</a>
+            <a href="/tagss/SpringBoot/" rel="tag"># SpringBoot</a>
           
         </div>
       
@@ -630,7 +619,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">博客</span>
                 </a>
               </div>
@@ -652,7 +641,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1223,113 +1212,6 @@
 
 
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("AF0iK95KRGcTgsqVnkeOgTiv-gzGzoHsz", "LK8sOegTG0O5yCPyP1UBkN8m");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
   
 
