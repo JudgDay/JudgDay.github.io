@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="GaoJian&#39;blog">
 <meta property="og:description" content="Mac切换JDK版本首先安装各个版本的jdk，安装教程略过，三个版本最终安装目录如下，版本号根据情况略有不同 123JDK1.6: /Library/Java/JavaVirtualMachines/1.6.0.jdkJDK1.8: /Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdkJDK20: /Library/Java/JavaVirtualM">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-07-30T15:22:44.356Z">
+<meta property="og:updated_time" content="2023-09-10T13:46:16.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac切换JDK版本">
 <meta name="twitter:description" content="Mac切换JDK版本首先安装各个版本的jdk，安装教程略过，三个版本最终安装目录如下，版本号根据情况略有不同 123JDK1.6: /Library/Java/JavaVirtualMachines/1.6.0.jdkJDK1.8: /Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdkJDK20: /Library/Java/JavaVirtualM">
@@ -371,10 +371,11 @@
 <p>安装jdk后，编辑bash_profile</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
 <p>添加如下内容</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`</span><br><span class="line">export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`</span><br><span class="line">export JAVA_20_HOME=`/usr/libexec/java_home -v 20`</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">默认设为JDK1.8</span></span><br><span class="line">export JAVA_HOME=$JAVA_8_HOME</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">alias</span>命令动态切换JDK版本</span></span><br><span class="line">alias jdk6="export JAVA_HOME=$JAVA_6_HOME"</span><br><span class="line">alias jdk8="export JAVA_HOME=$JAVA_8_HOME"</span><br><span class="line">alias jdk20="export JAVA_HOME=$JAVA_20_HOME"</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`</span><br><span class="line">export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`</span><br><span class="line">export JAVA_20_HOME=`/usr/libexec/java_home -v 20`</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">默认设为JDK1.8</span></span><br><span class="line">export JAVA_HOME=$JAVA_8_HOME</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">设置<span class="built_in">alias</span>命令动态切换JDK版本</span></span><br><span class="line">alias jdk6="export JAVA_HOME=$JAVA_6_HOME"</span><br><span class="line">alias jdk8="export JAVA_HOME=$JAVA_8_HOME"</span><br><span class="line">alias jdk20="export JAVA_HOME=$JAVA_20_HOME"</span><br></pre></td></tr></table></figure>
 <p>执行生效命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure>
 <p>之后只需在终端中输入alias命令就可以切换jdk版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdk20</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -528,7 +529,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">博客</span>
                 </a>
               </div>
@@ -550,7 +551,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

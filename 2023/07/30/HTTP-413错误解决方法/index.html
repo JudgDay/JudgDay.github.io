@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="GaoJian&#39;blog">
 <meta property="og:description" content="HTTP 413错误解决方法原因由于上传文件过大引起的，排查服务器是否有使用nginx做反向代理 解决方法修改nginx配置文件，调整客户端请求大小和缓存大小 12345http &amp;#123;    client_max_body_size 10M;    client_body_buffer_size 128k;    fastcgi_intercept_errors on;&amp;#125; cli">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-07-30T15:51:37.222Z">
+<meta property="og:updated_time" content="2023-09-10T13:54:04.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP 413错误解决方法">
 <meta name="twitter:description" content="HTTP 413错误解决方法原因由于上传文件过大引起的，排查服务器是否有使用nginx做反向代理 解决方法修改nginx配置文件，调整客户端请求大小和缓存大小 12345http &amp;#123;    client_max_body_size 10M;    client_body_buffer_size 128k;    fastcgi_intercept_errors on;&amp;#125; cli">
@@ -371,7 +371,7 @@
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="attribute">client_max_body_size</span> <span class="number">10M</span>;</span><br><span class="line">    <span class="attribute">client_body_buffer_size</span> <span class="number">128k</span>;</span><br><span class="line">    <span class="attribute">fastcgi_intercept_errors</span> <span class="literal">on</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>client_max_body_size: 客户端请求服务器最大允许大小，默认1M。如果请求的正文数据大于client_max_body_size，HTTP协议会报413 Request Entity Too Large。</p>
 <p>client_body_buffer_size: nginx分配给请求数据的Buffer大小，如果请求的数据小于client_body_buffer_size则将数据先在内存中存储。如果请求的值大于client_body_buffer_size小于client_max_body_size，就会将数据先存储到临时文件中。</p>
-<p>client_body_temp: 临时文件存储位置，默认/tmp/。配置的client_body_temp地址，一定让执行的Nginx的用户组有读写权限。否则，当传输的数据大于client_body_buffer_size，写进临时文件失败会报错。</p>
+<p>client_body_temp: 临时文件存储位置，默认/tmp/。配置的client_body_temp地址一定让执行的nginx的用户组有读写权限。否则，当传输的数据大于client_body_buffer_size，写进临时文件失败会报错。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20648 open() "/usr/local/openresty-1.9.7.5/nginx/client_body_temp/0000000019" failed (13: Permission denied)</span><br></pre></td></tr></table></figure>
 
       
@@ -526,7 +526,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">博客</span>
                 </a>
               </div>
@@ -548,7 +548,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

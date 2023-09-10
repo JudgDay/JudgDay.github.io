@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="GaoJian&#39;blog">
 <meta property="og:description" content="SpringBoot重试机制spring系列的spring-retry是一个实用程序模块，可以帮助我们以标准方式处理任何特定操作的重试。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖1234&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework.retry&amp;lt;/groupId&amp;gt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-07-30T15:34:26.949Z">
+<meta property="og:updated_time" content="2023-09-10T13:49:50.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot重试机制">
 <meta name="twitter:description" content="SpringBoot重试机制spring系列的spring-retry是一个实用程序模块，可以帮助我们以标准方式处理任何特定操作的重试。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖1234&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework.retry&amp;lt;/groupId&amp;gt">
@@ -421,10 +421,10 @@
 </table>
 <h2 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h2><p>当重试耗尽后，RetryOperations可以将控制传递给一个回调方法，即RecoveryCallback。spring-retry还提供了@Recover注解，用于@Retryable重试失败后回调。如果不需要回调方法，可以不写回调方法，重试耗尽后，如果还没成功符合业务判断，则抛出异常。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Recover</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">recover</span><span class="params">(Exception e, <span class="keyword">int</span> code)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"回调方法执行！！！！"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">400</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
 <li>回调方法与重试方法需写在同一个实现类里。</li>
 <li>回调方法的返回值必须与重试方法一致。</li>
-<li>方法内不能使用try catch，只能往外抛异常</li>
+<li>重试方法内不能使用try catch，只能往外抛异常</li>
 <li>由于spring-retry用到了aspect增强，所以在方法内部调用重试方法会失效。</li>
 </ol>
 
@@ -580,7 +580,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">博客</span>
                 </a>
               </div>
@@ -602,7 +602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -658,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot重试机制"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot重试机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入依赖"><span class="nav-number">1.1.</span> <span class="nav-text">引入依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启"><span class="nav-number">1.2.</span> <span class="nav-text">开启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.3.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retryable参数"><span class="nav-number">1.4.</span> <span class="nav-text">@Retryable参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Backoff参数"><span class="nav-number">1.4.1.</span> <span class="nav-text">@Backoff参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调"><span class="nav-number">1.5.</span> <span class="nav-text">回调</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">1.5.1.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot重试机制"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot重试机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入依赖"><span class="nav-number">1.1.</span> <span class="nav-text">引入依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启"><span class="nav-number">1.2.</span> <span class="nav-text">开启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.3.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retryable参数"><span class="nav-number">1.4.</span> <span class="nav-text">@Retryable参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Backoff参数"><span class="nav-number">1.4.1.</span> <span class="nav-text">@Backoff参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调"><span class="nav-number">1.5.</span> <span class="nav-text">回调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.6.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
             
 
           </div>
