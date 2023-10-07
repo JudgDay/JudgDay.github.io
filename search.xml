@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[FinalShell自动执行set +o history命令]]></title>
+    <url>%2F2023%2F10%2F07%2FFinalShell%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8Cset-o-history%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[FinalShell自动执行set +o history命令问题描述FinalShell终端连接后自动执行set +o history命令 问题原因FinalShell的服务器监控功能需要不停调用系统命令，来获取系统信息，可能生成大量命令历史记录，影响正常使用，因此暂时关闭历史功能]]></content>
+      <categories>
+        <category>开发问题</category>
+      </categories>
+      <tags>
+        <tag>FinalShell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDEA解决Since Maven 3.8.1 http repositories are blocked问题]]></title>
+    <url>%2F2023%2F10%2F07%2FIDEA%E8%A7%A3%E5%86%B3Since-Maven-3-8-1-http-repositories-are-blocked%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[IDEA解决Since Maven 3.8.1 http repositories are blocked问题问题描述IDEA下载引用的依赖时出现了Since Maven 3.8.1 http repositories are blocked错误 问题原因从Maven 3.8.1开始，Maven不再支持http的依赖 解决办法 降低Maven版本 在IDEA的Settings中搜索Maven，将maven home path地址改成3.8.1以下版本即可。 升级依赖 在pom.xml文件中将报错的依赖版本升级 修改Maven参数 在Maven命令中添加-Dmaven.wagon.http.allowAll=true参数来允许HTTP请求]]></content>
+      <categories>
+        <category>开发问题</category>
+      </categories>
+      <tags>
+        <tag>IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux安装MySQL]]></title>
     <url>%2F2023%2F09%2F11%2FLinux%E5%AE%89%E8%A3%85MySQL%2F</url>
-    <content type="text"><![CDATA[Linux安装MySQL下载安装包MySQL官网下载地址 根据Linux操作系统版本下载正确的安装包 安装选择一个目录，将安装包上传至该目录1cd /usr/local/ 安装MySQL包1yum -y install mysql80-community-release-el7-10.noarch.rpm 安装MySQL1yum -y install mysql-community-server 如果执行命令过程中提示：Unable to find a match: mysql-community-server，执行以下命令 1yum module disable mysql 设置权限通过chown命令改变文件的拥有者和群组-R：处理指定目录以及其子目录下的所有文件 1chown mysql:mysql -R /var/lib/mysql/ 启动MySQL服务1service mysqld start 查看MySQL运行状态1service mysqld status 看见running就表示启动成功了 查看初始密码1grep 'password' /var/log/mysqld.log 如果能正常查看到，则OK。如果查看不到，则表示没有密码 进入数据库1mysql -u root -p 输入命令后回车，会让你输入密码，如果没有密码，直接回车即可 如果显示数据库无法访问 停止MySQL服务1service mysqld stop 编辑配置文件1vi /etc/my.cnf 添加skip-grant-tables 添加skip-grant-tables，这样MySQL可以免密登录。 再次启动MySQL服务1service mysqld start 再次登录MySQL就可以进入了1mysql -u root -p 切换mysql数据库1use mysql; 更改密码12345678910# 更改密码，XXX为设置的密码ALTER USER 'root'@'localhost' IDENTIFIED BY 'XXX';# 一般执行完上面一句会报如下错误# ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement# 在mysql中输入flush privileges重新加载MySQL权限信息flush privileges;# 再次更改密码，XXX为设置的密码ALTER USER 'root'@'localhost' IDENTIFIED BY 'XXX';# 退出exit; 修改配置文件，删除skip-grant-tables123456# 停止MySQL服务service mysqld stop# 修改配置文件，删除skip-grant-tablesvi /etc/my.cnf# 开启MySQL服务service mysqld start 使用新密码即可登录 注意如果访问MySQL数据库失败，则记得看下下面三个配置是否OK 服务器的防火墙是否开放MySQL端口33061234567891011121314# 查看firewalld状态，若是dead状态，即防火墙未开启systemctl status firewalld# 查看防火墙是否开放3306端口firewall-cmd --query-port=3306/tcp# 关闭防火墙systemctl stop firewalld# 设置3306端口为永久开放firewall-cmd --add-port=3306/tcp --permanent# 重启防火墙（设置了新的端口记得先关闭，再重启）systemctl start firewalld 如果是云服务器，查看云安全组规则是否开放了3306端口不在同一局域网内连接，需要授权远程用户登录若提示Host is not allowed to connect to this MySQL server则需要授权远程用户登录 12345678910# 登录MySQLmysql -u root -p# 切换mysql数据库 use mysql;# 授权远程用户登录update user set host = '%' where user = 'root';# 重新加载MySQL权限信息FLUSH PRIVILEGES;# 退出exit;]]></content>
+    <content type="text"><![CDATA[Linux安装MySQL下载安装包MySQL官网下载地址 根据Linux操作系统版本下载正确的安装包 安装选择一个目录，将安装包上传至该目录1cd /usr/local/ 安装MySQL包1yum -y install mysql80-community-release-el7-10.noarch.rpm 安装MySQL1yum -y install mysql-community-server 如果执行命令过程中提示：Unable to find a match: mysql-community-server，执行以下命令 1yum module disable mysql 设置权限通过chown命令改变文件的拥有者和群组-R：处理指定目录以及其子目录下的所有文件 1chown mysql:mysql -R /var/lib/mysql/ 启动MySQL服务1service mysqld start 查看MySQL运行状态1service mysqld status 看见running就表示启动成功了 查看初始密码1grep 'password' /var/log/mysqld.log 如果能正常查看到，则OK。如果查看不到，则表示没有密码 进入数据库1mysql -u root -p 输入命令后回车，会让你输入密码，如果没有密码，直接回车即可 如果显示数据库无法访问 停止MySQL服务1service mysqld stop 编辑配置文件1vi /etc/my.cnf 添加skip-grant-tables 添加skip-grant-tables，这样MySQL可以免密登录。 再次启动MySQL服务1service mysqld start 再次登录MySQL就可以进入了1mysql -u root -p 切换mysql数据库1use mysql; 更改密码12345678910# 更改密码，XXX为设置的密码ALTER USER 'root'@'localhost' IDENTIFIED BY 'XXX';# 一般执行完上面一句会报如下错误# ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement# 在mysql中输入flush privileges重新加载MySQL权限信息flush privileges;# 再次更改密码，XXX为设置的密码ALTER USER 'root'@'localhost' IDENTIFIED BY 'XXX';# 退出MySQLexit; 修改配置文件，删除skip-grant-tables123456# 停止MySQL服务service mysqld stop# 修改配置文件，删除skip-grant-tablesvi /etc/my.cnf# 开启MySQL服务service mysqld start 使用新密码即可登录 注意如果访问MySQL数据库失败，则记得看下下面三个配置是否OK 服务器的防火墙是否开放MySQL端口33061234567891011121314# 查看firewalld状态，若是dead状态，即防火墙未开启systemctl status firewalld# 查看防火墙是否开放3306端口firewall-cmd --query-port=3306/tcp# 关闭防火墙systemctl stop firewalld# 设置3306端口为永久开放firewall-cmd --add-port=3306/tcp --permanent# 重启防火墙（设置了新的端口记得先关闭，再重启）systemctl start firewalld 如果是云服务器，查看云安全组规则是否开放了3306端口不在同一局域网内连接，需要授权远程用户登录若提示Host is not allowed to connect to this MySQL server则需要授权远程用户登录 12345678910# 登录MySQLmysql -u root -p# 切换mysql数据库use mysql;# 授权远程用户登录update user set host = '%' where user = 'root';# 重新加载MySQL权限信息flush privileges;# 退出MySQLexit;]]></content>
       <categories>
         <category>安装教程</category>
       </categories>
@@ -126,7 +148,7 @@
   <entry>
     <title><![CDATA[SpringBoot重试机制]]></title>
     <url>%2F2023%2F07%2F30%2FSpringBoot%E9%87%8D%E8%AF%95%E6%9C%BA%E5%88%B6%2F</url>
-    <content type="text"><![CDATA[SpringBoot重试机制spring系列的spring-retry是一个实用程序模块，可以帮助我们以标准方式处理任何特定操作的重试。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖1234&lt;dependency&gt; &lt;groupId&gt;org.springframework.retry&lt;/groupId&gt; &lt;artifactId&gt;spring-retry&lt;/artifactId&gt;&lt;/dependency&gt; 开启只有启用@EnabelRetry才行，写在配置类、启动类或services上都可以。 1234567import org.springframework.context.annotation.Configuration;import org.springframework.retry.annotation.EnableRetry;@Configuration@EnableRetrypublic class RetryConfig &#123;&#125; 使用123456789101112131415@Service@EnableRetrypublic class TestRetryServiceImpl implements TestRetryService &#123; @Override @Retryable(value = Exception.class,maxAttempts = 4,backoff = @Backoff(delay = 2000,multiplier = 1.5)) public int test(int code) throws Exception &#123; System.out.println("test开始" + LocalTime.now()); if (code == 0)&#123; throw new Exception("test"); &#125; System.out.println("test结束" + LocalTime.now()); return 200; &#125;&#125; @Retryable参数 参数 描述 value 指定重试的异常，默认为空。include的同义词，如果excludes也为空，则重试所有异常 include 指定重试的异常，默认为空 exclude 指定不重试的异常，默认为空 maxAttempts 最大重试次数，默认3次 backoff 重试等待策略，默认使用@Backoff @Backoff参数 参数 描述 value 重试间隔时间，单位毫秒，默认1000 multiplier 重试间隔时间倍数，默认为0。若value为2，multiplier为1.5，则第一次重试为2秒，第二次为3秒，第三次为4.5秒 回调当重试耗尽后，RetryOperations可以将控制传递给一个回调方法，即RecoveryCallback。spring-retry还提供了@Recover注解，用于@Retryable重试失败后回调。如果不需要回调方法，可以不写回调方法，重试耗尽后，如果还没成功符合业务判断，则抛出异常。 12345@Recoverpublic int recover(Exception e, int code) &#123; System.out.println("回调方法执行！！！！"); return 400;&#125; 注意 回调方法与重试方法需写在同一个实现类里。 回调方法的返回值必须与重试方法一致。 重试方法内不能使用try catch，只能往外抛异常 由于spring-retry用到了aspect增强，所以在方法内部调用重试方法会失效。]]></content>
+    <content type="text"><![CDATA[SpringBoot重试机制spring-retry是SpringBatch的一个子项目，可以使用它向代码添加重试逻辑。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖1234&lt;dependency&gt; &lt;groupId&gt;org.springframework.retry&lt;/groupId&gt; &lt;artifactId&gt;spring-retry&lt;/artifactId&gt;&lt;/dependency&gt; 开启只有启用@EnabelRetry才行，写在配置类、启动类或services上都可以。 1234567import org.springframework.context.annotation.Configuration;import org.springframework.retry.annotation.EnableRetry;@Configuration@EnableRetrypublic class RetryConfig &#123;&#125; 使用123456789101112131415@Service@EnableRetrypublic class TestRetryServiceImpl implements TestRetryService &#123; @Override @Retryable(value = Exception.class,maxAttempts = 4,backoff = @Backoff(delay = 2000,multiplier = 1.5)) public int test(int code) throws Exception &#123; System.out.println("test开始" + LocalTime.now()); if (code == 0)&#123; throw new Exception("test"); &#125; System.out.println("test结束" + LocalTime.now()); return 200; &#125;&#125; @Retryable参数 参数 描述 value 指定重试的异常，默认为空。include的同义词，如果excludes也为空，则重试所有异常 include 指定重试的异常，默认为空 exclude 指定不重试的异常，默认为空 maxAttempts 最大重试次数，默认3次 backoff 重试等待策略，默认使用@Backoff @Backoff参数 参数 描述 value 重试间隔时间，单位毫秒，默认1000 multiplier 重试间隔时间倍数，默认为0。若value为2，multiplier为1.5，则第一次重试为2秒，第二次为3秒，第三次为4.5秒 回调当重试耗尽后，RetryOperations可以将控制传递给一个回调方法，即RecoveryCallback。spring-retry还提供了@Recover注解，用于@Retryable重试失败后回调。如果不需要回调方法，可以不写回调方法，重试耗尽后，如果还没成功符合业务判断，则抛出异常。 12345@Recoverpublic int recover(Exception e, int code) &#123; System.out.println("回调方法执行！！！！"); return 400;&#125; 注意 回调方法与重试方法需写在同一个实现类里。 回调方法的返回值必须与重试方法一致。 重试方法内不能使用try catch，只能往外抛异常 由于spring-retry用到了aspect增强，所以在方法内部调用重试方法会失效。]]></content>
       <categories>
         <category>小技巧</category>
       </categories>
@@ -149,7 +171,7 @@
   <entry>
     <title><![CDATA[Mac切换JDK版本]]></title>
     <url>%2F2023%2F07%2F30%2FMac%E5%88%87%E6%8D%A2JDK%E7%89%88%E6%9C%AC%2F</url>
-    <content type="text"><![CDATA[Mac切换JDK版本首先安装各个版本的jdk，安装教程略过，三个版本最终安装目录如下，版本号根据情况略有不同 123JDK1.6: /Library/Java/JavaVirtualMachines/1.6.0.jdkJDK1.8: /Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdkJDK20: /Library/Java/JavaVirtualMachines/jdk-20.jdk 安装jdk后，编辑bash_profile 1vim ~/.bash_profile 添加如下内容 1234567891011export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`export JAVA_20_HOME=`/usr/libexec/java_home -v 20`#默认设为JDK1.8export JAVA_HOME=$JAVA_8_HOME#设置alias命令动态切换JDK版本alias jdk6="export JAVA_HOME=$JAVA_6_HOME"alias jdk8="export JAVA_HOME=$JAVA_8_HOME"alias jdk20="export JAVA_HOME=$JAVA_20_HOME" 执行生效命令 1source ~/.bash_profile 之后只需在终端中输入alias命令就可以切换jdk版本 1jdk20]]></content>
+    <content type="text"><![CDATA[Mac切换JDK版本首先安装各个版本的jdk，安装教程略过，三个版本最终安装目录如下，版本号根据情况略有不同 通过以下明亮可以 1/usr/libexec/java_home -V 123JDK1.6: /Library/Java/JavaVirtualMachines/1.6.0.jdkJDK1.8: /Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdkJDK20: /Library/Java/JavaVirtualMachines/jdk-20.jdk 安装jdk后，编辑bash_profile 1vim ~/.bash_profile 添加如下内容 1234567891011export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`export JAVA_20_HOME=`/usr/libexec/java_home -v 20`#默认设为JDK1.8export JAVA_HOME=$JAVA_8_HOME#设置alias命令动态切换JDK版本alias jdk6="export JAVA_HOME=$JAVA_6_HOME"alias jdk8="export JAVA_HOME=$JAVA_8_HOME"alias jdk20="export JAVA_HOME=$JAVA_20_HOME" 执行生效命令 1source ~/.bash_profile 之后只需在终端中输入alias命令就可以切换jdk版本 1jdk20]]></content>
       <categories>
         <category>小技巧</category>
       </categories>
@@ -303,14 +325,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Result window is too large, from + size must be less than or equal to: [10000] but was [10025]]]></title>
-    <url>%2F2021%2F08%2F06%2FResult-window-is-too-large-from-size-must-be-less-than-or-equal-to-10000-but-was-10025%2F</url>
-    <content type="text"><![CDATA[Result window is too large, from + size must be less than or equal to: [10000] but was [10025]问题描述在使用Elasticsearch做分页查询时，当查询记录超过10000时，会报如下错误 1Result window is too large, from + size must be less than or equal to: [10000] but was [10025]. See the scroll api for a more efficient way to request large data sets. This limit can be set by changing the [index.max_result_window] index level parameter. 查阅文档可知，默认只能查询到10000 12index.max_result_windowThe maximum value of from + size for searches to this index. Defaults to 10000. Search requests take heap memory and time proportional to from + size and this limits that memory. See Scroll or Search After for a more efficient alternative to raising this. 解决办法修改索引index的max_result_window属性，设置最大返回结果的大小 1234put http://10.127.0.1:9200/test/_settings&#123; "index.max_result_window":1000001&#125; 修改成功后返回 123&#123; "acknowledged": true&#125;]]></content>
+    <title><![CDATA[Elasticsearch解决Result window is too large, from + size must be less than or equal to: [10000] but was [10025]问题]]></title>
+    <url>%2F2021%2F08%2F06%2FElasticsearch%E8%A7%A3%E5%86%B3Result-window-is-too-large-from-size-must-be-less-than-or-equal-to-%5B10000%5D-but-was-%5B10025%5D%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Elasticsearch解决Result window is too large, from + size must be less than or equal to: [10000] but was [10025]问题问题描述在使用Elasticsearch做分页查询时，当查询记录超过10000时，会报如下错误 1Result window is too large, from + size must be less than or equal to: [10000] but was [10025]. See the scroll api for a more efficient way to request large data sets. This limit can be set by changing the [index.max_result_window] index level parameter. 查阅文档可知，默认只能查询到10000 12index.max_result_windowThe maximum value of from + size for searches to this index. Defaults to 10000. Search requests take heap memory and time proportional to from + size and this limits that memory. See Scroll or Search After for a more efficient alternative to raising this. 解决办法修改索引index的max_result_window属性，设置最大返回结果的大小 1234put http://10.127.0.1:9200/test/_settings&#123; "index.max_result_window":1000001&#125; 修改成功后返回 123&#123; "acknowledged": true&#125;]]></content>
       <categories>
         <category>开发问题</category>
       </categories>
       <tags>
-        <tag>ES</tag>
+        <tag>Elasticsearch</tag>
       </tags>
   </entry>
   <entry>
