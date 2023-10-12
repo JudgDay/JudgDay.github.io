@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="SpringBoot重试机制spring-retry是SpringBatch的一个子项目，可以使用它向代码添加重试逻辑。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖12345678&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework.retry&amp;lt;/groupId&amp;gt;  &amp;">
+<meta name="description" content="SpringBoot重试机制spring-retry是SpringFramework中的一个模块，使用它可以向代码添加重试逻辑。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖12345678&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework.retry&amp;lt;/groupId&amp;gt">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot重试机制">
 <meta property="og:url" content="http://zmjwdzjl.com/2023/07/30/SpringBoot重试机制/index.html">
 <meta property="og:site_name" content="GaoJian&#39;blog">
-<meta property="og:description" content="SpringBoot重试机制spring-retry是SpringBatch的一个子项目，可以使用它向代码添加重试逻辑。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖12345678&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework.retry&amp;lt;/groupId&amp;gt;  &amp;">
+<meta property="og:description" content="SpringBoot重试机制spring-retry是SpringFramework中的一个模块，使用它可以向代码添加重试逻辑。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖12345678&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework.retry&amp;lt;/groupId&amp;gt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2023-10-07T14:34:34.129Z">
+<meta property="og:updated_time" content="2023-10-12T15:10:43.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot重试机制">
-<meta name="twitter:description" content="SpringBoot重试机制spring-retry是SpringBatch的一个子项目，可以使用它向代码添加重试逻辑。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖12345678&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework.retry&amp;lt;/groupId&amp;gt;  &amp;">
+<meta name="twitter:description" content="SpringBoot重试机制spring-retry是SpringFramework中的一个模块，使用它可以向代码添加重试逻辑。在spring-retry中，所有配置都是基于简单注释的，在方法上添加@Retryable即可。 引入依赖12345678&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework.retry&amp;lt;/groupId&amp;gt">
 
 
 
@@ -366,7 +366,7 @@
       
 
       
-        <h1 id="SpringBoot重试机制"><a href="#SpringBoot重试机制" class="headerlink" title="SpringBoot重试机制"></a>SpringBoot重试机制</h1><p>spring-retry是SpringBatch的一个子项目，可以使用它向代码添加重试逻辑。在spring-retry中，所有配置都是基于简单注释的，在方法上添加<code>@Retryable</code>即可。</p>
+        <h1 id="SpringBoot重试机制"><a href="#SpringBoot重试机制" class="headerlink" title="SpringBoot重试机制"></a>SpringBoot重试机制</h1><p>spring-retry是SpringFramework中的一个模块，使用它可以向代码添加重试逻辑。在spring-retry中，所有配置都是基于简单注释的，在方法上添加<code>@Retryable</code>即可。</p>
 <h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.retry<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-retry<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="开启"><a href="#开启" class="headerlink" title="开启"></a>开启</h2><p>只有启用@EnabelRetry才行，写在配置类、启动类或services上都可以。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.retry.annotation.EnableRetry;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableRetry</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RetryConfig</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -582,7 +582,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">博客</span>
                 </a>
               </div>
@@ -604,7 +604,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
