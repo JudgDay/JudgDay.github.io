@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Markdown解决表格中竖线自动转义问题]]></title>
+    <url>%2F2023%2F10%2F13%2FMarkdown%E8%A7%A3%E5%86%B3%E8%A1%A8%E6%A0%BC%E4%B8%AD%E7%AB%96%E7%BA%BF%E8%87%AA%E5%8A%A8%E8%BD%AC%E4%B9%89%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Markdown解决表格中竖线自动转义问题问题描述在Markdown的表格中输入|，会被自动转义 问题原因由于Markdown的表格是通过|来定义，因此不能直接用|来写绝对值或竖杠，所以会被自动转义 解决方法用&amp;#124;或&amp;#x7C;替代|]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Tomcat解决Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986问题]]></title>
     <url>%2F2023%2F10%2F12%2FTomcat%E8%A7%A3%E5%86%B3Invalid-character-found-in-the-request-target-The-valid-characters-are-defined-in-RFC-7230-and-RFC-3986%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[Tomcat解决Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986问题问题描述Tomcat运行项目中出现Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986错误 问题原因Tomcat7.0之后的版本按照RFC 3986规范进行访问解析，Url中只允许包含英文字母(a-zA-Z)、数字(0-9)、特殊字符(- _ . ~)、保留字符(! * &#39; ( ) ; : @ &amp; = + $ , / ? # [ ]) 解决方法 更换低版本Tomcat 修改Tomcat的server文件 修改Tomcat目录下的/conf/server.xml文件，在&lt;Connector&gt;标签中添加relaxedQueryChars=&quot;[]|{}^&amp;#x5c;&amp;#x60;&amp;quot;&amp;lt;&amp;gt;&quot;属性 对特殊字符进行转义 字符 描述 编码 ; 分号 %3B / 斜线 %2F ? 问号 %3F : 冒号 %3A @ “at”符号 %4O = 等号 %3D &amp; “和”符号 %26 &lt; 小于号 %3C &gt; 大于号 %3E “ 双引号 %22 # 井号 %23 % 百分号 %25 { 左大括号 %7B } 右大括号 %7D \ 竖线 %7C \ 反斜线 %5C ^ 加字号 %5E ~ 波浪号 %7E [ 左中括号 %5B ] 右中括号 %5D ` 反单引号 %60 空格 %20]]></content>
+    <content type="text"><![CDATA[Tomcat解决Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986问题问题描述Tomcat运行项目中出现Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986错误 问题原因Tomcat7.0之后的版本按照RFC 3986规范进行访问解析，Url中只允许包含英文字母(a-zA-Z)、数字(0-9)、特殊字符(- _ . ~)、保留字符(! * &#39; ( ) ; : @ &amp; = + $ , / ? # [ ]) 解决方法 更换低版本Tomcat 修改Tomcat的server文件 修改Tomcat目录下的/conf/server.xml文件，在&lt;Connector&gt;标签中添加relaxedQueryChars=&quot;[]|{}^&amp;#x5c;&amp;#x60;&amp;quot;&amp;lt;&amp;gt;&quot;属性 对特殊字符进行转义 字符 描述 编码 ; 分号 %3B / 斜线 %2F ? 问号 %3F : 冒号 %3A @ “at”符号 %4O = 等号 %3D &amp; “和”符号 %26 &lt; 小于号 %3C &gt; 大于号 %3E “ 双引号 %22 # 井号 %23 % 百分号 %25 { 左大括号 %7B } 右大括号 %7D &#124; 竖线 %7C \ 反斜线 %5C ^ 加字号 %5E ~ 波浪号 %7E [ 左中括号 %5B ] 右中括号 %5D ` 反单引号 %60 空格 %20]]></content>
       <categories>
         <category>开发问题</category>
       </categories>
