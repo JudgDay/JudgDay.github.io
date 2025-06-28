@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[BigDecimal解决Non-terminating decimal expansion; no exact representable decimal result问题]]></title>
-    <url>%2F2023%2F10%2F15%2FBigDecimal%E8%A7%A3%E5%86%B3Non-terminating%20decimal%20expansion%3B%20no%20exact%20representable%20decimal%20result%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[BigDecimal解决Non-terminating decimal expansion; no exact representable decimal result问题问题描述使用BigDecimal.divide()报java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result异常 问题原因BigDecimal.divide()的商的小数无限循环导致的 12345public static void main(String[] args) &#123; BigDecimal one = new BigDecimal(1); BigDecimal three = new BigDecimal(3); System.out.println(one.divide(three));&#125; 解决方法设置商的小数点位数和舍入规则 123456public static void main(String[] args) &#123; BigDecimal one = new BigDecimal(1); BigDecimal three = new BigDecimal(3); //取四位小数，四舍五入 System.out.println(one.divide(three, 4, RoundingMode.HALF_UP)));&#125;]]></content>
+    <title><![CDATA[BigDecimal解决Non-terminating decimal expansion no exact representable decimal result问题]]></title>
+    <url>%2F2023%2F10%2F15%2FBigDecimal%E8%A7%A3%E5%86%B3Non-terminating%20decimal%20expansion%20no%20exact%20representable%20decimal%20result%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[BigDecimal解决Non-terminating decimal expansion no exact representable decimal result问题问题描述使用BigDecimal.divide()报java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result异常 问题原因BigDecimal.divide()的商的小数无限循环导致的 12345public static void main(String[] args) &#123; BigDecimal one = new BigDecimal(1); BigDecimal three = new BigDecimal(3); System.out.println(one.divide(three));&#125; 解决方法设置商的小数点位数和舍入规则 123456public static void main(String[] args) &#123; BigDecimal one = new BigDecimal(1); BigDecimal three = new BigDecimal(3); //取四位小数，四舍五入 System.out.println(one.divide(three, 4, RoundingMode.HALF_UP)));&#125;]]></content>
       <categories>
         <category>开发问题</category>
       </categories>
