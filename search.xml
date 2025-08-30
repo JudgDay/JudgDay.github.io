@@ -86,8 +86,8 @@
         <category>安装教程</category>
       </categories>
       <tags>
-        <tag>JDK</tag>
         <tag>Linux</tag>
+        <tag>JDK</tag>
       </tags>
   </entry>
   <entry>
@@ -592,7 +592,7 @@
   <entry>
     <title><![CDATA[MySQL安装教程]]></title>
     <url>%2F2019%2F08%2F10%2FMySQL%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[MySQL 8.0.16安装教程(windows 64位)MySQL官网下载地址点击下载Windows 64位正式版 点击No Thanks,just start my download 便可以下载 下载完成后解压，解压后的目录 解压后的目录中没有my.ini文件，在安装根目录下自行创建my.ini（新建文本文件，将文件类型改为的.ini），写入基本配置：12345678910111213141516171819202122232425[mysqld]# 设置3306端口port=3306# 设置mysql的安装目录basedir=:\Program Files\MySQL# 设置mysql数据库的数据的存放目录datadir=C:\Program Files\MySQL\Data# 允许最大连接数max_connections=200# 允许连接失败的次数。max_connect_errors=10# 服务端使用的字符集默认为utf8mb4character-set-server=utf8mb4# 创建新表时将使用的默认存储引擎default-storage-engine=INNODB# 默认使用“mysql_native_password”插件认证#mysql_native_passworddefault_authentication_plugin=mysql_native_password[mysql]# 设置mysql客户端默认字符集default-character-set=utf8mb4[client]# 设置mysql客户端连接服务端时默认使用的端口port=3306default-character-set=utf8mb4 配置文件中的路径要和实际存放的路径一致 在安装时，为避免出错使用管理员身份运行CMD，否则在安装时会报错，会导致安装失败的情况（进入C:\Windows\System32，右键cmd.exe以管理员身份运行） 打开CMD后进入mysql的bin目录 在MySQL目录下的bin目录下执行命令：mysqld --initialize --console [注意] 红框为root@localhost生成临时密码：9P0gYk-？0，kT，在没有更改密码前，需要记住这个密码，后续登录需要用到。复制密码先保存起来!!! 执行mysqld --install 命令，安装mysql服务 如果出现红框表示MySQL服务安装成功了， 如果出现下图则说明mysql的服务已存在，需要把它删掉 执行sc delete mysql命令，删除MySQL，再执行mysqld --install安装服务命令 服务安装成功之后，执行net start mysql命令启动MySQL服务 执行mysql -u root -p命令登录mysql，密码为之前的临时密码 执行ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;new password&#39;;命令修改mysql密码，new pasword为修改后的密码 若显示Query OK,0 rows affected即为修改成功 好了，到此为止，MySQL就已经安装完毕了]]></content>
+    <content type="text"><![CDATA[MySQL 8.0.16安装教程(windows 64位)MySQL官网下载地址点击下载Windows 64位正式版 点击No Thanks,just start my download 便可以下载 下载完成后解压，解压后的目录 解压后的目录中没有my.ini文件，在安装根目录下自行创建my.ini（新建文本文件，将文件类型改为的.ini），写入基本配置：12345678910111213141516171819202122232425[mysqld]# 设置3306端口port=3306# 设置mysql的安装目录basedir=C:\Program Files\MySQL# 设置mysql数据库的数据的存放目录datadir=C:\Program Files\MySQL\Data# 允许最大连接数max_connections=200# 允许连接失败的次数。max_connect_errors=10# 服务端使用的字符集默认为utf8mb4character-set-server=utf8mb4# 创建新表时将使用的默认存储引擎default-storage-engine=INNODB# 默认使用“mysql_native_password”插件认证#mysql_native_passworddefault_authentication_plugin=mysql_native_password[mysql]# 设置mysql客户端默认字符集default-character-set=utf8mb4[client]# 设置mysql客户端连接服务端时默认使用的端口port=3306default-character-set=utf8mb4 配置文件中的路径要和实际存放的路径一致 在安装时，为避免出错使用管理员身份运行CMD，否则在安装时会报错，会导致安装失败的情况（进入C:\Windows\System32，右键cmd.exe以管理员身份运行） 打开CMD后进入mysql的bin目录 在MySQL目录下的bin目录下执行命令：mysqld --initialize --console [注意] 红框为root@localhost生成临时密码：9P0gYk-？0，kT，在没有更改密码前，需要记住这个密码，后续登录需要用到。复制密码先保存起来!!! 执行mysqld --install 命令，安装mysql服务 如果出现红框表示MySQL服务安装成功了， 如果出现下图则说明mysql的服务已存在，需要把它删掉 执行sc delete mysql命令，删除MySQL，再执行mysqld --install安装服务命令 服务安装成功之后，执行net start mysql命令启动MySQL服务 执行mysql -u root -p命令登录mysql，密码为之前的临时密码 执行ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;new password&#39;;命令修改mysql密码，new pasword为修改后的密码 若显示Query OK,0 rows affected即为修改成功 好了，到此为止，MySQL就已经安装完毕了]]></content>
       <categories>
         <category>安装教程</category>
       </categories>

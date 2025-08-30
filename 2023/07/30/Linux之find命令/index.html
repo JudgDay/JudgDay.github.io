@@ -374,27 +374,27 @@
 <li>搜索条件：用于指定要搜索的文件和目录，满足这个条件的就会被搜索出来。</li>
 </ul>
 <h2 id="选项参数"><a href="#选项参数" class="headerlink" title="选项参数"></a>选项参数</h2><h3 id="name"><a href="#name" class="headerlink" title="-name"></a>-name</h3><p>按文件名进行匹配</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 搜索后缀为txt的文件</span></span><br><span class="line">find / -name "*.txt"</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 搜索后缀为txt的文件</span><br><span class="line">find / -name "*.txt"</span><br></pre></td></tr></table></figure>
 <h3 id="type"><a href="#type" class="headerlink" title="-type"></a>-type</h3><p>按文件类型进行匹配</p>
 <p><code>d</code>: 目录、<code>f</code>: 文件、<code>l</code>: 符号链接（软链接）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 搜索文件类型为目录的文件</span></span><br><span class="line">find / -type d</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 搜索文件类型为目录的文件</span><br><span class="line">find / -type d</span><br></pre></td></tr></table></figure>
 <h3 id="size"><a href="#size" class="headerlink" title="-size"></a>-size</h3><p>按文件大小进行匹配</p>
 <p><code>+</code> : 大于、<code>-</code> ：小于</p>
 <p>单位: <code>c</code>（字节）、<code>w</code>（字数）、<code>b</code>（块数）、<code>k</code>（KB）、<code>M</code>（MB）、 <code>G</code>（GB）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 搜索大于100KB的文件</span></span><br><span class="line">find / -size +100c</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 搜索大于100KB的文件</span><br><span class="line">find / -size +100c</span><br></pre></td></tr></table></figure>
 <h3 id="user"><a href="#user" class="headerlink" title="-user"></a>-user</h3><p>按文件所属用户进行匹配。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 搜索属于root用户的文件</span></span><br><span class="line">find / -user root</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 搜索属于root用户的文件</span><br><span class="line">find / -user root</span><br></pre></td></tr></table></figure>
 <h3 id="mtime"><a href="#mtime" class="headerlink" title="-mtime"></a>-mtime</h3><p>按文件最后内容的修改时间进行匹配</p>
 <p><code>+</code> : 几天之内、<code>-</code> : 几天之前</p>
 <p>单位: 天</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 搜索修改日期为7天前的文件</span></span><br><span class="line">find / -mtime -7</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 搜索修改日期为7天前的文件</span><br><span class="line">find / -mtime -7</span><br></pre></td></tr></table></figure>
 <h3 id="perm"><a href="#perm" class="headerlink" title="-perm"></a>-perm</h3><p>按文件权限进行匹配</p>
 <p><code>/u</code>: 当前用户、<code>/g</code>: 组权限、<code>/o</code>: 其他用户权限、<code>/a</code>: 所有用户权限</p>
 <p><code>+</code> : 具有、<code>-</code> : 不具有</p>
 <p><code>r</code>: 读权限、<code>w</code>: 写权限、<code>x</code>: 执行权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查找具有读写权限的文件</span></span><br><span class="line">find / -perm /u+rw</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 查找具有读写权限的文件</span><br><span class="line">find / -perm /u+rw</span><br></pre></td></tr></table></figure>
 <h3 id="exec"><a href="#exec" class="headerlink" title="-exec"></a>-exec</h3><p>对搜索的结果执行命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 将后缀为txt的文件删除</span></span><br><span class="line">find / -name "*.txt" -exec rm &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 将后缀为txt的文件删除</span><br><span class="line">find / -name "*.txt" -exec rm &#123;&#125; \;</span><br></pre></td></tr></table></figure>
 <p><code>{}</code>为占位符，将搜索的结果放到这里</p>
 <p><code>-exec</code> 参数需要使用 <code>\;</code> 作为命令的结尾</p>
 
