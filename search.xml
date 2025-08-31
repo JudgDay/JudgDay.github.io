@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[IDEA自动优化导包]]></title>
+    <url>%2F2025%2F08%2F31%2FIDEA%E8%87%AA%E5%8A%A8%E4%BC%98%E5%8C%96%E5%AF%BC%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[IDEA自动优化导包WhatAuto Import功能是帮助我们自动导入尚未导入的包并且删除无用的包。使我们在开发过程中省略了导包的操作，提高了开发效率。 How点击Settings→Editor→General→Auto Import勾选Add unambiguous imports on the fly和Optimize imports on the fly Add unambiguous imports on the fly：编辑代码时，当只有一个具有匹配名称的可导入声明时，自动导入。 Optimize imports on the fly：根据代码样式设置删除未使用的导入并重新排序导入。]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[解决Mac安装EDR失败问题]]></title>
     <url>%2F2025%2F08%2F31%2F%E8%A7%A3%E5%86%B3Mac%E5%AE%89%E8%A3%85EDR%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[解决Mac安装EDR失败问题提示EDR终端不支持覆盖安装 原因：系统有残留文件，需删除 打开终端，输入sudo -i命令后回车，输入密码后回车切换到root用户 输入cd /Library/sangfor/edr命令，查看文件夹下有无其他文件，如果有则将edr文件删除 输入cd /Library/LaunchDaemons命令，查看文件夹下有无com.sangfor.edr_agent.plist文件，如果有则删除]]></content>
