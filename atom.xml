@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zmjwdzjl.com/"/>
-  <updated>2025-08-31T07:13:22.244Z</updated>
+  <updated>2025-08-31T08:42:07.721Z</updated>
   <id>http://zmjwdzjl.com/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux定时执行命令</title>
+    <link href="http://zmjwdzjl.com/2025/08/31/Linux%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4/"/>
+    <id>http://zmjwdzjl.com/2025/08/31/Linux定时执行命令/</id>
+    <published>2025-08-31T08:38:11.000Z</published>
+    <updated>2025-08-31T08:42:07.721Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Linux定时执行命令"><a href="#Linux定时执行命令" class="headerlink" title="Linux定时执行命令"></a>Linux定时执行命令</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建脚本</span></span><br><span class="line">vim /data/backup/batch.sh</span><br><span class="line"><span class="meta">#</span><span class="bash"> 授权文件</span></span><br><span class="line">chmod 777 /data/backup/batch.sh</span><br><span class="line"><span class="meta">#</span><span class="bash"> 打开crond</span></span><br><span class="line">crontab -e</span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加定时任务</span></span><br><span class="line">00 12 * * * sh /data/backup/batch.sh</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启crond</span></span><br><span class="line">systemctl restart crond</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Linux定时执行命令&quot;&gt;&lt;a href=&quot;#Linux定时执行命令&quot; class=&quot;headerlink&quot; title=&quot;Linux定时执行命令&quot;&gt;&lt;/a&gt;Linux定时执行命令&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;tabl
+      
+    
+    </summary>
+    
+      <category term="小技巧" scheme="http://zmjwdzjl.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Linux" scheme="http://zmjwdzjl.com/tagss/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac解决安装包已损坏无法打开问题</title>
+    <link href="http://zmjwdzjl.com/2025/08/31/Mac%E8%A7%A3%E5%86%B3%E5%AE%89%E8%A3%85%E5%8C%85%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E9%97%AE%E9%A2%98/"/>
+    <id>http://zmjwdzjl.com/2025/08/31/Mac解决安装包已损坏无法打开问题/</id>
+    <published>2025-08-31T08:32:21.000Z</published>
+    <updated>2025-08-31T08:37:01.151Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mac解决安装包已损坏无法打开问题"><a href="#Mac解决安装包已损坏无法打开问题" class="headerlink" title="Mac解决安装包已损坏无法打开问题"></a>Mac解决安装包已损坏无法打开问题</h1><h2 id="What"><a href="#What" class="headerlink" title="What"></a>What</h2><p>Mac从Sierra 10.12开始，去除了<code>允许从&quot;任何来源&quot;下载的应用程序</code>的选项，如果不开启的话，会直接影响到无法运行的第三方应用。</p><h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><ol><li>打开终端</li><li>输入<code>sudo spctl --master-disable</code></li><li>回车</li><li>输入密码</li></ol><p>如果还是显示<code>已损坏，无法打开。您应该将它移到废纸篓</code></p><ol><li>打开终端</li><li>输入<code>sudo xattr -r -d com.apple.quarantine</code>(结尾要有空格)</li><li>打开访达，进入”应用程序”，找到软件，将图标拖到终端里面</li><li>回车</li><li>输入密码</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Mac解决安装包已损坏无法打开问题&quot;&gt;&lt;a href=&quot;#Mac解决安装包已损坏无法打开问题&quot; class=&quot;headerlink&quot; title=&quot;Mac解决安装包已损坏无法打开问题&quot;&gt;&lt;/a&gt;Mac解决安装包已损坏无法打开问题&lt;/h1&gt;&lt;h2 id=&quot;What&quot;
+      
+    
+    </summary>
+    
+      <category term="小技巧" scheme="http://zmjwdzjl.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Mac" scheme="http://zmjwdzjl.com/tagss/Mac/"/>
+    
+  </entry>
   
   <entry>
     <title>IDEA自动优化导包</title>
@@ -473,56 +523,6 @@
     
     
       <category term="SpringBoot" scheme="http://zmjwdzjl.com/tagss/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot汉字转拼音</title>
-    <link href="http://zmjwdzjl.com/2023/07/30/SpringBoot%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/"/>
-    <id>http://zmjwdzjl.com/2023/07/30/SpringBoot汉字转拼音/</id>
-    <published>2023-07-30T15:53:59.000Z</published>
-    <updated>2023-09-10T13:51:25.631Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="SpringBoot汉字转拼音"><a href="#SpringBoot汉字转拼音" class="headerlink" title="SpringBoot汉字转拼音"></a>SpringBoot汉字转拼音</h1><h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.hankcs<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hanlp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>portable-1.8.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="汉字转拼音"><a href="#汉字转拼音" class="headerlink" title="汉字转拼音"></a>汉字转拼音</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.collections4.ListUtils;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin(<span class="string">"重庆"</span>);</span><br><span class="line">    ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getPinyinWithoutTone()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="汉字首字母"><a href="#汉字首字母" class="headerlink" title="汉字首字母"></a>汉字首字母</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.collections4.ListUtils;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin(<span class="string">"重庆"</span>);</span><br><span class="line">    ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getFirstChar()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="汉字符号音调"><a href="#汉字符号音调" class="headerlink" title="汉字符号音调"></a>汉字符号音调</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.collections4.ListUtils;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin(<span class="string">"重庆"</span>);</span><br><span class="line">    ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getPinyinWithToneMark()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="汉字数字音调"><a href="#汉字数字音调" class="headerlink" title="汉字数字音调"></a>汉字数字音调</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.collections4.ListUtils;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin(<span class="string">"重庆"</span>);</span><br><span class="line">    ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="汉字声母"><a href="#汉字声母" class="headerlink" title="汉字声母"></a>汉字声母</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.collections4.ListUtils;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin(<span class="string">"重庆"</span>);</span><br><span class="line">    ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getShengmu()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="汉字音调"><a href="#汉字音调" class="headerlink" title="汉字音调"></a>汉字音调</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.collections4.ListUtils;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Pinyin&gt; pinyins = PinyinDictionary.convertToPinyin(<span class="string">"重庆"</span>);</span><br><span class="line">    ListUtils.emptyIfNull(pinyins).forEach(v-&gt; System.out.print(v.getTone()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;SpringBoot汉字转拼音&quot;&gt;&lt;a href=&quot;#SpringBoot汉字转拼音&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot汉字转拼音&quot;&gt;&lt;/a&gt;SpringBoot汉字转拼音&lt;/h1&gt;&lt;h2 id=&quot;引入依赖&quot;&gt;&lt;a href
-      
-    
-    </summary>
-    
-      <category term="小技巧" scheme="http://zmjwdzjl.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="SpringBoot" scheme="http://zmjwdzjl.com/tagss/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTTP 413错误解决方法</title>
-    <link href="http://zmjwdzjl.com/2023/07/30/HTTP-413%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>http://zmjwdzjl.com/2023/07/30/HTTP-413错误解决方法/</id>
-    <published>2023-07-30T15:48:54.000Z</published>
-    <updated>2023-09-10T13:54:04.420Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="HTTP-413错误解决方法"><a href="#HTTP-413错误解决方法" class="headerlink" title="HTTP 413错误解决方法"></a>HTTP 413错误解决方法</h1><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>由于上传文件过大引起的，排查服务器是否有使用nginx做反向代理</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>修改nginx配置文件，调整客户端请求大小和缓存大小</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="attribute">client_max_body_size</span> <span class="number">10M</span>;</span><br><span class="line">    <span class="attribute">client_body_buffer_size</span> <span class="number">128k</span>;</span><br><span class="line">    <span class="attribute">fastcgi_intercept_errors</span> <span class="literal">on</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>client_max_body_size: 客户端请求服务器最大允许大小，默认1M。如果请求的正文数据大于client_max_body_size，HTTP协议会报413 Request Entity Too Large。</p><p>client_body_buffer_size: nginx分配给请求数据的Buffer大小，如果请求的数据小于client_body_buffer_size则将数据先在内存中存储。如果请求的值大于client_body_buffer_size小于client_max_body_size，就会将数据先存储到临时文件中。</p><p>client_body_temp: 临时文件存储位置，默认/tmp/。配置的client_body_temp地址一定让执行的nginx的用户组有读写权限。否则，当传输的数据大于client_body_buffer_size，写进临时文件失败会报错。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20648 open() "/usr/local/openresty-1.9.7.5/nginx/client_body_temp/0000000019" failed (13: Permission denied)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;HTTP-413错误解决方法&quot;&gt;&lt;a href=&quot;#HTTP-413错误解决方法&quot; class=&quot;headerlink&quot; title=&quot;HTTP 413错误解决方法&quot;&gt;&lt;/a&gt;HTTP 413错误解决方法&lt;/h1&gt;&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot;
-      
-    
-    </summary>
-    
-      <category term="开发问题" scheme="http://zmjwdzjl.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
-    
-    
-      <category term="HTTP Status Code" scheme="http://zmjwdzjl.com/tagss/HTTP-Status-Code/"/>
     
   </entry>
   

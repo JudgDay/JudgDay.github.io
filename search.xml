@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux定时执行命令]]></title>
+    <url>%2F2025%2F08%2F31%2FLinux%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Linux定时执行命令12345678910# 创建脚本vim /data/backup/batch.sh# 授权文件chmod 777 /data/backup/batch.sh# 打开crondcrontab -e# 添加定时任务00 12 * * * sh /data/backup/batch.sh# 重启crondsystemctl restart crond]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac解决安装包已损坏无法打开问题]]></title>
+    <url>%2F2025%2F08%2F31%2FMac%E8%A7%A3%E5%86%B3%E5%AE%89%E8%A3%85%E5%8C%85%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Mac解决安装包已损坏无法打开问题WhatMac从Sierra 10.12开始，去除了允许从&quot;任何来源&quot;下载的应用程序的选项，如果不开启的话，会直接影响到无法运行的第三方应用。 How 打开终端 输入sudo spctl --master-disable 回车 输入密码 如果还是显示已损坏，无法打开。您应该将它移到废纸篓 打开终端 输入sudo xattr -r -d com.apple.quarantine(结尾要有空格) 打开访达，进入”应用程序”，找到软件，将图标拖到终端里面 回车 输入密码]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[IDEA自动优化导包]]></title>
     <url>%2F2025%2F08%2F31%2FIDEA%E8%87%AA%E5%8A%A8%E4%BC%98%E5%8C%96%E5%AF%BC%E5%8C%85%2F</url>
     <content type="text"><![CDATA[IDEA自动优化导包WhatAuto Import功能是帮助我们自动导入尚未导入的包并且删除无用的包。使我们在开发过程中省略了导包的操作，提高了开发效率。 How点击Settings→Editor→General→Auto Import勾选Add unambiguous imports on the fly和Optimize imports on the fly Add unambiguous imports on the fly：编辑代码时，当只有一个具有匹配名称的可导入声明时，自动导入。 Optimize imports on the fly：根据代码样式设置删除未使用的导入并重新排序导入。]]></content>
