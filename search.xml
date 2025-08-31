@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[解决Mac安装EDR失败问题]]></title>
+    <url>%2F2025%2F08%2F31%2F%E8%A7%A3%E5%86%B3Mac%E5%AE%89%E8%A3%85EDR%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[解决Mac安装EDR失败问题提示EDR终端不支持覆盖安装 原因：系统有残留文件，需删除 打开终端，输入sudo -i命令后回车，输入密码后回车切换到root用户 输入cd /Library/sangfor/edr命令，查看文件夹下有无其他文件，如果有则将edr文件删除 输入cd /Library/LaunchDaemons命令，查看文件夹下有无com.sangfor.edr_agent.plist文件，如果有则删除]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SpringBoot转换MultipartFile]]></title>
+    <url>%2F2025%2F08%2F31%2FSpringBoot%E8%BD%AC%E6%8D%A2MultipartFile%2F</url>
+    <content type="text"><![CDATA[SpringBoot转换MultipartFileString转MultipartFile虽然MockMultipartFile实现了MultipartFile接口，但只用于测试访问分段上传，所以这个类在非测试代码中是无法使用的。如果想要在非测试代码中使用，需要移除&lt;scope&gt;test&lt;/scope&gt;。 引用依赖1234&lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-test&lt;/artifactId&gt;&lt;/dependency&gt; 转换方法123456789101112131415161718import org.springframework.mock.web.MockMultipartFile;/*** String转MultipartFile** @param content 文件中的内容* @param filename 文件名* @return MultipartFile* @throws IOException*/public static MultipartFile StringToMultipartFile(String content, String filename) throws IOException &#123; return new MockMultipartFile( "file", //form-data的name属性 filename, //文件名 "text/html", //MIME类型 content.getBytes(StandardCharsets.UTF_8) //字符编码 );&#125; byte[]转MultipartFile引用依赖1234&lt;dependency&gt; &lt;groupId&gt;commons-fileupload&lt;/groupId&gt; &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;&lt;/dependency&gt; 转换方法123byte[] testFile = new byte[1024];InputStream inputStream = new ByteArrayInputStream(testFile);MultipartFile file = new MockMultipartFile(ContentType.APPLICATION_OCTET_STREAM.toString(), inputStream); byte[]转File引用依赖12345&lt;dependency&gt; &lt;groupId&gt;cn.hutool&lt;/groupId&gt; &lt;artifactId&gt;hutool-all&lt;/artifactId&gt; &lt;version&gt;5.8.26&lt;/version&gt;&lt;/dependency&gt; 转换方法12345byte[] data = getFileBytes("src/main/resources/banner.txt");// 指定要创建的文件路径String filePath = "/path/to/your/output/file";// 使用HuTool将byte数组写入到文件File file = FileUtil.writeBytes(data, filePath); File转MultipartFile转换方法1234567891011121314151617public class FileToMultipartFileConverter &#123; public static MultipartFile convert(File file) throws IOException, FileUploadException &#123; // 创建FileItemFactory实例 FileItemFactory factory = new DiskFileItemFactory(); // 创建一个FileItem来包装File对象 org.apache.commons.fileupload.FileItem fileItem = factory.createItem( "file", // 表单字段名，可以自定义 "application/octet-stream", // 内容类型 true, // 是否使用临时文件存储上传的数据 file.getName() // 文件名 ); // 将File对象的内容写入到FileItem中 fileItem.write(new File(fileItem.getName())); // 使用CommonsMultipartFile来包装FileItem return new DiskFileItem(fileItem).getStoreLocation(); &#125;&#125; MultipartFile转File转换方法12345678910111213141516171819202122public class MultipartFileToFileConverter &#123; public static File convert(MultipartFile multipartFile, String filePath) throws IOException &#123; // 检查MultipartFile是否为空 if (multipartFile == null || multipartFile.isEmpty()) &#123; throw new IOException("文件为空"); &#125; // 创建File对象 File file = new File(filePath); // 使用try-with-resources语句自动关闭资源 try (InputStream inputStream = multipartFile.getInputStream(); FileOutputStream outputStream = new FileOutputStream(file)) &#123; // 将输入流中的数据写入到输出流（即文件）中 byte[] buffer = new byte[4096]; int bytesRead; while ((bytesRead = inputStream.read(buffer)) != -1) &#123; outputStream.write(buffer, 0, bytesRead); &#125; &#125; // 返回创建的File对象 return file; &#125;&#125;]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Nacos安装教程]]></title>
     <url>%2F2025%2F08%2F30%2FNacos%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[Nacos安装教程下载在Nacos官网下载zip文件到本地，并解压缩文件 Windows启动和停止123456# 进入以下路径cd nacos/bin# cmd输入以下命令或者双击运行startup.cmd文件启动服务startup.cmd -m standalone# 停止服务双击运行shutdown.cmd文件 Mac启动和停止123456# 进入以下路径cd nacos/bin# 终端输入以下命令启动服务sh startup.sh -m standalone# 终端输入以下命令停止服务sh shutdown.sh 可视化页面访问http://127.0.0.1:8848/nacos，账号密码都是nacos，进行登录即可。]]></content>
